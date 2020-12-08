@@ -68,6 +68,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+" Move by visual lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
 
 " CURSOR 
 let &t_SI.="\e[3 q" "SI = INSERT mode
@@ -96,6 +107,12 @@ let g:ctrlp_cmd = 'CtrlP'
 set ttimeoutlen =1 	" Delay when exiting insert mode
 let g:airline_inactive_collapse=1
 let g:airline#extensions#nerdtree_statusline = 1
+let g:airline_powerline_fonts = 1
+  " powerline symbols
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.dirty=' !'
+let g:airline_symbols.maxlinenr = ' '
 
 " NERDTREE
 map <C-n> :NERDTreeToggle<CR>
