@@ -27,8 +27,9 @@ call timer_start(3000, "SetBackgroundMode", {"repeat": -1})
 autocmd ColorScheme * highlight Normal ctermbg=None
 autocmd ColorScheme * highlight NonText ctermbg=None
 
+colorscheme bubblegum
 set cursorline		" Highlight current line 
-
+set fillchars=vert:\│
 " ------------------------------------------------------
 " EDITOR SETTINGS 
 " ------------------------------------------------------
