@@ -29,11 +29,14 @@ autocmd ColorScheme * highlight NonText ctermbg=None
 
 colorscheme bubblegum
 set cursorline		" Highlight current line 
-set fillchars=vert:\│
+set fillchars=vert:\│	" Because \| doesnt fill line
+
 " ------------------------------------------------------
 " EDITOR SETTINGS 
 " ------------------------------------------------------
+
 syntax on 
+filetype plugin indent on
 set clipboard=unnamed	" Use system clipboard
 set showmatch 		" Highlight matching brackets
 set number
@@ -42,8 +45,6 @@ set autoindent
 set splitright		" Sane splits
 set splitbelow
 set linebreak		" Wrap  
-set undofile 		" Maintain Undo history
-set undodir=~/.vim/undodir
 
 " SEARCH
 set ignorecase		
@@ -95,6 +96,9 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " ------------------------------------------------------
 " LANGUAGE SPECIFIC CONFIGURATIONS
 " ------------------------------------------------------
+
+" LaTeX
+let g:tex_flavor = "latex"
 
 " ------------------------------------------------------
 " PLUGIN SETTINGS 
