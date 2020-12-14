@@ -1,0 +1,54 @@
+[submodule ".vim/pack/plugins/start/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/plugins/start/vim-fugitive"]
+	path = .vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/plugins/start/nerdtree"]
+	path = .vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/pack/plugins/start/vim-airline"]
+	path = .vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/language-support/vimtex"]
+	path = .vim/pack/language-support/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule ".vim/pack/language-support/start/vimtex"]
+	path = .vim/pack/language-support/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule ".vim/pack/plugins/start/vim-auto-light-dark"]
+	path = .vim/pack/plugins/start/vim-auto-light-dark
+	url = https://github.com/nburns/vim-auto-light-dark
+[submodule ".vim/pack/plugins/start/vim-async"]
+	path = .vim/pack/plugins/start/vim-async
+	url = https://github.com/sillybun/vim-async
+[submodule ".vim/pack/colorschemes/nord-vim"]
+	path = .vim/pack/colorschemes/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim
+[submodule ".vim/pack/colorschemes/iceberg.vim"]
+	path = .vim/pack/colorschemes/iceberg.vim
+	url = https://github.com/cocopon/iceberg.vim
+[submodule ".vim/pack/plugins/start/nerdcommenter"]
+	path = .vim/pack/plugins/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter
+[submodule ".vim/pack/packages/start/nerdtree"]
+	path = .vim/pack/packages/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/pack/packages/start/nerdcommenter"]
+	path = .vim/pack/packages/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter
+[submodule ".vim/pack/packages/start/lightline.vim"]
+	path = .vim/pack/packages/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/pack/packages/start/vim-surround"]
+	path = .vim/pack/packages/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/packages/start/vim-fugitive"]
+	path = .vim/pack/packages/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/colorschemes/start/nord-vim"]
+	path = .vim/pack/colorschemes/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim
+[submodule ".vim/pack/packages/start/vim-airline"]
+	path = .vim/pack/packages/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline

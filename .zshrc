@@ -5,36 +5,43 @@ export PATH="$PATH:/Users/parth/.local/bin"
 setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 
 # PROMPT 
-PS1='%T %B%F{grey}μ%f%b ' 
+PS1='%F{blue}%T %Bμ%b%f ' 
 
 # VIM EMULATION 
 bindkey -v 
 export KEYTIMEOUT=1 	# Quicker switch between modes
-cursor_mode() {
-    cursor_block='\e[2 q'
-    cursor_beam='\e[3 q'
+clear 			# On startup
 
-    function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-            [[ $1 = 'block' ]]; then
-            echo -ne $cursor_block
-        elif [[ ${KEYMAP} == main ]] ||
-            [[ ${KEYMAP} == viins ]] ||
-            [[ ${KEYMAP} = '' ]] ||
-            [[ $1 = 'beam' ]]; then
-            echo -ne $cursor_beam
-        fi
-    }
+# CURSOR SHAPE DEPENDING ON VI MODE 
+function _set_cursor() {
+    if [[ $TMUX = '' ]]; then
+      echo -ne $1
+    else
+      echo -ne "\ePtmux;\e\e$1\e\\"
+    fi
+}
 
-    zle-line-init() {
-        echo -ne $cursor_beam
-    }
+# Remove mode switching delay.
+KEYTIMEOUT=5
 
-    zle -N zle-keymap-select
-    zle -N zle-line-init
-}; cursor_mode		# Cursor shape based on Vim mode 
+function _set_block_cursor() { _set_cursor '\e[1 q' }
+function _set_beam_cursor() { _set_cursor '\e[3 q' }
 
-clear	# On startup
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+      _set_block_cursor
+  else
+      _set_beam_cursor
+  fi
+}
+zle -N zle-keymap-select
+# ensure beam cursor when starting new terminal
+precmd_functions+=(_set_beam_cursor) 
+# ensure insert mode and beam cursor when exiting vim
+zle-line-init() { zle -K viins; _set_beam_cursor }
+zle-line-finish() { _set_block_cursor }
+zle -N zle-line-finish
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 
