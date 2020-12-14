@@ -14,10 +14,6 @@ set fillchars=vert:\│	" Because \| doesnt fill line
 set noshowmode 		" Disable mode display at bottom
 colorscheme iceberg
 
-" TRANSPARENT BACKGROUND------------------------------------------------------
-autocmd ColorScheme * highlight Normal ctermbg=None
-autocmd ColorScheme * highlight NonText ctermbg=None
-
 " BACKGROUND TRANSITION-------------------------------------------------------
 " At startup
 call system("defaults read -g AppleInterfaceStyle")
