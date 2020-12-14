@@ -2,7 +2,7 @@ set nocompatible
 set shortmess+=I 	" Disable default startup message 
 set noerrorbells visualbell t_vb=
 
-" Clear terminal on exit
+" Clear terminal on exit 
 autocmd VimLeave * :!clear	
 
 " ----------------------------------------------------------------------------
@@ -110,16 +110,24 @@ let g:tex_flavor = "latex"
 
 packloadall
 
+" BATTERY.VIM ----------------------------------------------------------------
+let g:battery#update_interval = 10000
+let g:battery#component_format = '%v%%%s'
+
 " AIRLINE---------------------------------------------------------------------
 set ttimeoutlen =1 	" Delay when exiting insert mode
 let g:airline_inactive_collapse=1
-let g:airline#extensions#nerdtree_statusline = 0
 
 " Powerline symbols
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.dirty=' !'
 let g:airline_symbols.maxlinenr = ' '
+
+"Airline sections 
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+let g:airline_section_y = '%{battery#component()}'
 
 " NERDTREE--------------------------------------------------------------------
  map <C-n> :NERDTreeToggle<CR>
