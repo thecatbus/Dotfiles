@@ -9,10 +9,30 @@ autocmd VimLeave * :!clear
 " APPEARANCE SETTINGS 
 " ----------------------------------------------------------------------------
 
-set cursorline		" Highlight current line 
 set fillchars=vert:\│	" Because \| doesnt fill line
 set noshowmode 		" Disable mode display at bottom
 colorscheme iceberg
+
+" CURSORLINE------------------------------------------------------------------
+autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
+autocmd WinLeave 			* setlocal nocursorline
+
+" COLOR ADJUSTMENTS-----------------------------------------------------------
+function Adjustcolors()
+	hi Normal ctermbg	= NONE
+	hi Nontext ctermbg	= NONE
+	hi LineNr ctermbg 	= NONE
+	hi EndOfBuffer ctermbg 	= NONE
+	if &background == 'dark'
+		hi CursorLine ctermbg 	= 233
+		hi CursorLineNr ctermbg = 233
+	else 
+		hi CursorLine ctermbg 	= 253
+		hi CursorLineNr	ctermbg = 253
+	endif
+endfunction
+
+autocmd ColorScheme * call Adjustcolors()
 
 " BACKGROUND TRANSITION-------------------------------------------------------
 " At startup
@@ -23,7 +43,7 @@ else
 	set background=light
 endif
 
-" Otherwise
+" Manual change
 function Setbackground()
 	if &background == 'dark'
 		set background=light
@@ -120,17 +140,25 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.dirty=' !'
 let g:airline_symbols.maxlinenr = ' '
 
+"Shorten filepath
+function Shortpath()
+	if expand('%:p:h')=='/'
+		return '/'.expand('%:t')
+	elseif expand('%p:h:h')=='/'
+		return '/'.expand('%:p:h:t').'/'.expand('%:t')
+	else
+		return '../'.expand('%:p:h:h:t').'/'.expand('%:p:h:t').'/'.expand('%:t')
+	endif
+endfunction
+
 "Airline sections 
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 let g:airline_section_y = '%{battery#component()}'
+let g:airline_section_c = '%{Shortpath()}'
 
 " NERDTREE--------------------------------------------------------------------
  map <C-n> :NERDTreeToggle<CR>
-
-" Start if no file was specified at startup
- autocmd StdinReadPre * let s:std_in=1
- autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
 
 " Exit if last buffer remaining is NERDTree 
  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
