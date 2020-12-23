@@ -52,3 +52,24 @@
 [submodule ".vim/pack/packages/start/vim-airline"]
 	path = .vim/pack/packages/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/packages/start/YouCompleteMe"]
+	path = .vim/pack/packages/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
+[submodule ".vim/pack/language-support/start/vim-orgmode"]
+	path = .vim/pack/language-support/start/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode
+[submodule ".vim/pack/packages/start/neoformat"]
+	path = .vim/pack/packages/start/neoformat
+	url = https://github.com/sbdchd/neoformat
+[submodule ".vim/pack/packages/start/ale"]
+	path = .vim/pack/packages/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".vim/pack/language-support/start/ghcmod"]
+	path = .vim/pack/language-support/start/ghcmod
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule ".vim/pack/packages/start/vimproc.vim"]
+	path = .vim/pack/packages/start/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
+[submodule ".vim/pack/language-support/start/vim-ghcid-quickfix"]
+	path = .vim/pack/language-support/start/vim-ghcid-quickfix
+	url = https://github.com/aiya000/vim-ghcid-quickfix

@@ -1,4 +1,4 @@
-export PATH="$PATH:/Users/parth/.local/bin"
+export PATH="$PATH:/Users/parth/.local/bin:/usr/local/sbin"
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 # OPTIONS 
@@ -43,5 +43,4 @@ zle-line-finish() { _set_block_cursor }
 zle -N zle-line-finish
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
