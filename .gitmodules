@@ -73,3 +73,6 @@
 [submodule ".vim/pack/language-support/start/vim-ghcid-quickfix"]
 	path = .vim/pack/language-support/start/vim-ghcid-quickfix
 	url = https://github.com/aiya000/vim-ghcid-quickfix
+[submodule ".vim/pack/language-support/start/coc.nvim"]
+	path = .vim/pack/language-support/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
