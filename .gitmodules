@@ -94,3 +94,6 @@
 [submodule ".vim/pack/language-support/start/lean.vim"]
 	path = .vim/pack/language-support/start/lean.vim
 	url = https://github.com/leanprover/lean.vim
+[submodule ".vim/pack/packages/start/battery.vim"]
+	path = .vim/pack/packages/start/battery.vim
+	url = https://github.com/lambdalisue/battery.vim
