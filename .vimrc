@@ -2,9 +2,6 @@ set nocompatible
 set shortmess+=I 	" Disable default startup message 
 set noerrorbells visualbell t_vb=
 
-" Clear terminal on exit 
-autocmd VimLeave * :!clear	
-
 " ----------------------------------------------------------------------------
 " APPEARANCE SETTINGS 
 " ----------------------------------------------------------------------------
@@ -23,9 +20,10 @@ function Adjustcolors()
 	hi Nontext ctermbg	= NONE
 	hi LineNr ctermbg 	= NONE
 	hi EndOfBuffer ctermbg 	= NONE
+	hi SignColumn ctermbg 	= NONE
 	if &background == 'dark'
-		hi CursorLine ctermbg 	= 234
-		hi CursorLineNr ctermbg = 234
+		hi CursorLine ctermbg 	= 235
+		hi CursorLineNr ctermbg = 235
 	else 
 		hi CursorLine ctermbg 	= 253
 		hi CursorLineNr	ctermbg = 253
@@ -89,6 +87,10 @@ set showcmd
 set mouse=c 		" Disable mouse
 set backspace=indent,eol,start 
 
+" Easier completion
+inoremap <C-j>	<C-n>
+inoremap <C-k>  <C-p>
+
 " Avoid using arrow keys
 nnoremap <Left>  <Nop>
 nnoremap <Right> <Nop>
@@ -126,7 +128,7 @@ let g:tex_flavor = "latex"
 let g:vimtex_view_method = "skim"
 let g:vimtex_viewer_general = "skim"
 let g:vimtex_view_automatic = 1
-let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_enabled = 0
 
 " Automatically cut lines
 function SetWidth()
@@ -142,6 +144,46 @@ autocmd VimEnter,WinEnter,BufWinEnter 	* call SetWidth()
 " ----------------------------------------------------------------------------
 
 packloadall
+
+" COC ------------------------------------------------------------------------
+" set hidden 		" recommended
+" set nobackup		" some servers might have issues with backup files
+" set nowritebackup
+" set cmdheight=2	" more space for message display
+set updatetime=300
+" set signcolumn=yes	" Always show alert-sign (>>) column
+
+" Remap keys for gotos
+nmap <leader>dd <Plug>(coc-definition)
+nmap <leader>dt <Plug>(coc-type-definition)
+nmap <leader>di <Plug>(coc-implementation)
+nmap <leader>dr <Plug>(coc-references)
+
+" Apply quickfix (linter) suggestion
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " BATTERY.VIM ----------------------------------------------------------------
 let g:battery#update_interval = 10000
@@ -194,8 +236,12 @@ let g:airline_mode_map = {
       \ ''     : 'V',
       \ }
 
+" Airline Extensions
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#nerdtree_statusline = 0
+
 " NERDTREE--------------------------------------------------------------------
- map <C-n> :NERDTreeToggle<CR>
+ map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Exit if last buffer remaining is NERDTree 
  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

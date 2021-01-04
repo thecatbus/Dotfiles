@@ -76,3 +76,21 @@
 [submodule ".vim/pack/language-support/start/coc.nvim"]
 	path = .vim/pack/language-support/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule ".vim/pack/colorschemes/start/two-firewatch"]
+	path = .vim/pack/colorschemes/start/two-firewatch
+	url = https://github.com/rakr/vim-two-firewatch
+[submodule ".vim/pack/colorschemes/start/gruvbox"]
+	path = .vim/pack/colorschemes/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule ".vim/pack/packages/start/goyo.vim"]
+	path = .vim/pack/packages/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/packages/start/limelight.vim"]
+	path = .vim/pack/packages/start/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule ".vim/pack/language-support/start/slimv"]
+	path = .vim/pack/language-support/start/slimv
+	url = https://github.com/kovisoft/slimv
+[submodule ".vim/pack/language-support/start/lean.vim"]
+	path = .vim/pack/language-support/start/lean.vim
+	url = https://github.com/leanprover/lean.vim
