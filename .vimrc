@@ -77,6 +77,10 @@ set splitright		" Sane splits
 set splitbelow
 set linebreak		" Wrap  
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " SEARCH----------------------------------------------------------------------
 set ignorecase		
 set smartcase

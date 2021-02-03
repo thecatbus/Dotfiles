@@ -97,3 +97,9 @@
 [submodule ".vim/pack/packages/start/battery.vim"]
 	path = .vim/pack/packages/start/battery.vim
 	url = https://github.com/lambdalisue/battery.vim
+[submodule ".vim/pack/language-support/start/agda-vim"]
+	path = .vim/pack/language-support/start/agda-vim
+	url = https://github.com/derekelkins/agda-vim
+[submodule ".vim/pack/language-support/start/agda"]
+	path = .vim/pack/language-support/start/agda
+	url = https://github.com/coot/vim-agda-integration
