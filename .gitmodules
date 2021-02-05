@@ -103,3 +103,6 @@
 [submodule ".vim/pack/language-support/start/agda"]
 	path = .vim/pack/language-support/start/agda
 	url = https://github.com/coot/vim-agda-integration
+[submodule ".emacs.d/iceberg"]
+	path = .emacs.d/iceberg
+	url = https://github.com/conao3/iceberg-theme.el
