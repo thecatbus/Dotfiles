@@ -1,93 +1,24 @@
-[submodule ".vim/pack/plugins/start/vim-surround"]
-	path = .vim/pack/plugins/start/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule ".vim/pack/plugins/start/vim-fugitive"]
-	path = .vim/pack/plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/pack/plugins/start/nerdtree"]
-	path = .vim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree
-[submodule ".vim/pack/plugins/start/vim-airline"]
-	path = .vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule ".vim/pack/language-support/vimtex"]
-	path = .vim/pack/language-support/vimtex
-	url = https://github.com/lervag/vimtex
 [submodule ".vim/pack/language-support/start/vimtex"]
 	path = .vim/pack/language-support/start/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule ".vim/pack/plugins/start/vim-auto-light-dark"]
-	path = .vim/pack/plugins/start/vim-auto-light-dark
-	url = https://github.com/nburns/vim-auto-light-dark
-[submodule ".vim/pack/plugins/start/vim-async"]
-	path = .vim/pack/plugins/start/vim-async
-	url = https://github.com/sillybun/vim-async
-[submodule ".vim/pack/colorschemes/nord-vim"]
-	path = .vim/pack/colorschemes/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim
 [submodule ".vim/pack/colorschemes/iceberg.vim"]
 	path = .vim/pack/colorschemes/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim
-[submodule ".vim/pack/plugins/start/nerdcommenter"]
-	path = .vim/pack/plugins/start/nerdcommenter
-	url = https://github.com/preservim/nerdcommenter
 [submodule ".vim/pack/packages/start/nerdtree"]
 	path = .vim/pack/packages/start/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule ".vim/pack/packages/start/nerdcommenter"]
-	path = .vim/pack/packages/start/nerdcommenter
-	url = https://github.com/preservim/nerdcommenter
-[submodule ".vim/pack/packages/start/lightline.vim"]
-	path = .vim/pack/packages/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
 [submodule ".vim/pack/packages/start/vim-surround"]
 	path = .vim/pack/packages/start/vim-surround
 	url = https://github.com/tpope/vim-surround
 [submodule ".vim/pack/packages/start/vim-fugitive"]
 	path = .vim/pack/packages/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/pack/colorschemes/start/nord-vim"]
-	path = .vim/pack/colorschemes/start/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim
-[submodule ".vim/pack/packages/start/vim-airline"]
-	path = .vim/pack/packages/start/vim-airline
+[submodule ".vim/pack/packages/start/airline"]
+	path = .vim/pack/packages/start/airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule ".vim/pack/packages/start/YouCompleteMe"]
-	path = .vim/pack/packages/start/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe
-[submodule ".vim/pack/language-support/start/vim-orgmode"]
-	path = .vim/pack/language-support/start/vim-orgmode
-	url = https://github.com/jceb/vim-orgmode
-[submodule ".vim/pack/packages/start/neoformat"]
-	path = .vim/pack/packages/start/neoformat
-	url = https://github.com/sbdchd/neoformat
-[submodule ".vim/pack/packages/start/ale"]
-	path = .vim/pack/packages/start/ale
-	url = https://github.com/dense-analysis/ale
-[submodule ".vim/pack/language-support/start/ghcmod"]
-	path = .vim/pack/language-support/start/ghcmod
-	url = https://github.com/eagletmt/ghcmod-vim
-[submodule ".vim/pack/packages/start/vimproc.vim"]
-	path = .vim/pack/packages/start/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim
-[submodule ".vim/pack/language-support/start/vim-ghcid-quickfix"]
-	path = .vim/pack/language-support/start/vim-ghcid-quickfix
-	url = https://github.com/aiya000/vim-ghcid-quickfix
 [submodule ".vim/pack/language-support/start/coc.nvim"]
 	path = .vim/pack/language-support/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
-[submodule ".vim/pack/colorschemes/start/two-firewatch"]
-	path = .vim/pack/colorschemes/start/two-firewatch
-	url = https://github.com/rakr/vim-two-firewatch
-[submodule ".vim/pack/colorschemes/start/gruvbox"]
-	path = .vim/pack/colorschemes/start/gruvbox
-	url = https://github.com/morhetz/gruvbox
-[submodule ".vim/pack/packages/start/goyo.vim"]
-	path = .vim/pack/packages/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-[submodule ".vim/pack/packages/start/limelight.vim"]
-	path = .vim/pack/packages/start/limelight.vim
-	url = https://github.com/junegunn/limelight.vim
 [submodule ".vim/pack/language-support/start/slimv"]
 	path = .vim/pack/language-support/start/slimv
 	url = https://github.com/kovisoft/slimv
@@ -97,12 +28,3 @@
 [submodule ".vim/pack/packages/start/battery.vim"]
 	path = .vim/pack/packages/start/battery.vim
 	url = https://github.com/lambdalisue/battery.vim
-[submodule ".vim/pack/language-support/start/agda-vim"]
-	path = .vim/pack/language-support/start/agda-vim
-	url = https://github.com/derekelkins/agda-vim
-[submodule ".vim/pack/language-support/start/agda"]
-	path = .vim/pack/language-support/start/agda
-	url = https://github.com/coot/vim-agda-integration
-[submodule ".emacs.d/iceberg"]
-	path = .emacs.d/iceberg
-	url = https://github.com/conao3/iceberg-theme.el
