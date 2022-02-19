@@ -21,6 +21,7 @@ function Adjustcolors()
 	hi LineNr ctermbg 	= NONE
 	hi EndOfBuffer ctermbg 	= NONE
 	hi SignColumn ctermbg 	= NONE
+    hi markdownItalic ctermbg = NONE
 	if &background == 'dark'
 		hi CursorLine ctermbg 	= 235
 		hi CursorLineNr ctermbg = 235
@@ -29,6 +30,14 @@ function Adjustcolors()
 		hi CursorLineNr	ctermbg = 253
 	endif
 endfunction
+
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 autocmd ColorScheme * call Adjustcolors()
 

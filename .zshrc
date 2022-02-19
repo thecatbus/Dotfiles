@@ -1,4 +1,3 @@
-export PATH="$PATH:/Users/parth/.local/bin:/usr/local/sbin"
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 # OPTIONS 
@@ -45,4 +44,5 @@ zle -N zle-line-finish
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 clear
-neofetch
+# neofetch
+export PATH=/usr/local/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/parth/.local/bin:/usr/local/sbin
