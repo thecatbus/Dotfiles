@@ -21,7 +21,8 @@ function Adjustcolors()
 	hi LineNr ctermbg 	= NONE
 	hi EndOfBuffer ctermbg 	= NONE
 	hi SignColumn ctermbg 	= NONE
-    hi markdownItalic ctermbg = NONE
+    hi link markdownItalic Normal
+    hi link markdownError Normal
 	if &background == 'dark'
 		hi CursorLine ctermbg 	= 235
 		hi CursorLineNr ctermbg = 235
@@ -138,6 +139,10 @@ inoremap <Up> <C-o>gk
 " LANGUAGE SPECIFIC CONFIGURATIONS
 " ----------------------------------------------------------------------------
 
+" Haskell --------------------------------------------------------------------
+autocmd filetype haskell autocmd BufWritePre <buffer> call CocAction('format')
+let g:haskell_indent_disable = 1
+
 " LaTeX ----------------------------------------------------------------------
 let g:tex_flavor = "latex"
 let g:vimtex_view_method = "skim"
@@ -212,7 +217,8 @@ let g:airline_inactive_collapse=1
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.dirty=' !'
-let g:airline_symbols.maxlinenr = ' '
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.colnr = ' ㏇:'
 
 "Shorten filepath
 function Shortpath()

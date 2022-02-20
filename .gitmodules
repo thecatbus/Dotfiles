@@ -31,3 +31,6 @@
 [submodule ".vim/pack/colorschemes/start/iceberg.vim"]
 	path = .vim/pack/colorschemes/start/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim/
+[submodule ".vim/pack/language-support/start/haskell-vim"]
+	path = .vim/pack/language-support/start/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim
