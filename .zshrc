@@ -1,10 +1,8 @@
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
 # OPTIONS 
 setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 
 # PROMPT 
-PS1='%F{blue}%T %Bμ%b%f ' 
+PS1='%F{blue}%T μ%b%f ' 
 
 # VIM EMULATION 
 bindkey -v 
@@ -44,5 +42,9 @@ zle -N zle-line-finish
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 clear
-# neofetch
-export PATH=/usr/local/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/parth/.local/bin:/usr/local/sbin
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_CTRL_T_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_OPTS='--height 30% --layout=reverse --multi --cycle'
