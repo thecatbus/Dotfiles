@@ -25,8 +25,8 @@ function Adjustcolors()
     hi link markdownError Normal
 	if &background == 'dark'
 		hi CursorLine ctermbg 	= 235
-		hi CursorLineNr ctermbg = 235
-	else 
+		hi CursorLineNr ctermbg = 235 
+    else 
 		hi CursorLine ctermbg 	= 253
 		hi CursorLineNr	ctermbg = 253
 	endif
@@ -266,3 +266,35 @@ let g:airline#extensions#nerdtree_statusline = 0
 
 " Exit if last buffer remaining is NERDTree 
  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" FZF--------------------------------------------------------------------------
+set rtp+=/usr/local/opt/fzf
+
+let g:fzf_preview_window = []
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     [-1],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment']}
+
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <Leader>/ :BLines<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>' :Marks<CR>
+nnoremap <silent> <Leader>g :Commits<CR>
+nnoremap <silent> <Leader>H :Helptags<CR>
+nnoremap <silent> <Leader>hf :History<CR>
+nnoremap <silent> <Leader>h: :History:<CR>
+nnoremap <silent> <Leader>h/ :History/<CR> 
+
+"INPUT-SWITCHER----------------------------------------------------------------
+let g:XkbSwitchEnabled = 1

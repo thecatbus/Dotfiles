@@ -41,10 +41,13 @@ zle -N zle-line-finish
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-clear
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND='ag --hidden -g ""'
-export FZF_DEFAULT_OPTS='--height 30% --layout=reverse --multi --cycle'
+export FZF_DEFAULT_OPTS='--info=hidden
+                         --height 30% 
+                         --layout=reverse 
+                         --multi               
+                         --cycle
+                         --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
