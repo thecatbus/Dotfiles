@@ -15,6 +15,7 @@ autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
 autocmd WinLeave 			* setlocal nocursorline
 
 " COLOR ADJUSTMENTS-----------------------------------------------------------
+
 function Adjustcolors()
 	hi Normal ctermbg	= NONE
 	hi Nontext ctermbg	= NONE
@@ -26,9 +27,11 @@ function Adjustcolors()
 	if &background == 'dark'
 		hi CursorLine ctermbg 	= 235
 		hi CursorLineNr ctermbg = 235 
+        let g:limelight_conceal_ctermfg = 240
     else 
 		hi CursorLine ctermbg 	= 253
 		hi CursorLineNr	ctermbg = 253
+        let g:limelight_conceal_ctermfg = 247
 	endif
 endfunction
 
@@ -91,6 +94,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set scrolloff=10
+
 set noswapfile
 
 " SEARCH----------------------------------------------------------------------
@@ -108,14 +113,14 @@ inoremap <C-j>	<C-n>
 inoremap <C-k>  <C-p>
 
 " Avoid using arrow keys
-nnoremap <Left>  <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up>    <Nop>
-nnoremap <Down>  <Nop>
-inoremap <Left>  <Nop>
-inoremap <Right> <Nop>
-inoremap <Up>    <Nop>
-inoremap <Down>  <Nop>
+nnoremap <left>  <Nop>
+nnoremap <right> <Nop>
+nnoremap <up>    <Nop>
+nnoremap <down>  <Nop>
+inoremap <left>  <Nop>
+inoremap <right> <Nop>
+inoremap <up>    <Nop>
+inoremap <down>  <Nop>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -154,6 +159,8 @@ let g:vimtex_fold_enabled = 0
 function SetWidth()
 	if &filetype == 'tex' 
 		set tw=80
+    elseif &filetype == 'text' 
+		set tw=50
 	endif 
 endfunction
 
@@ -272,9 +279,9 @@ set rtp+=/usr/local/opt/fzf
 
 let g:fzf_preview_window = []
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
+\ { 'fg':      ['fg', 'Comment'],
+  \ 'bg':      [-1],
+  \ 'hl':      ['fg', 'Label'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg+':     [-1],
   \ 'hl+':     ['fg', 'Statement'],
@@ -296,5 +303,38 @@ nnoremap <silent> <Leader>hf :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR> 
 
-"INPUT-SWITCHER----------------------------------------------------------------
-let g:XkbSwitchEnabled = 1
+" GOYO/Limelight -------------------------------------------------------------
+
+function! s:goyo_enter()
+  "Turn off noise
+  set noshowcmd
+  set scrolloff=999
+  setlocal nocursorline
+  "Quit on :q"
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  "Turn on Limelight
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  "Turn on options
+  set showcmd
+  set scrolloff=10
+  setlocal cursorline
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+  "Turn off Limelight
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
