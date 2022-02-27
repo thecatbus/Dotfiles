@@ -8,13 +8,14 @@ set noerrorbells visualbell t_vb=
 
 set fillchars=vert:\│	" Because \| doesnt fill line
 set noshowmode 		" Disable mode display at bottom
+set conceallevel=2
 colorscheme iceberg
 
 " CURSORLINE------------------------------------------------------------------
 autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
 autocmd WinLeave 			* setlocal nocursorline
 
-" COLOR ADJUSTMENTS-----------------------------------------------------------
+" COLOR AND HIGHLIGHT ADJUSTMENTS---------------------------------------------
 
 function Adjustcolors()
 	hi Normal ctermbg	= NONE
@@ -24,6 +25,8 @@ function Adjustcolors()
 	hi SignColumn ctermbg 	= NONE
     hi link markdownItalic Normal
     hi link markdownError Normal
+    hi markdownBold cterm = bold
+    hi markdownItalic cterm = italic
 	if &background == 'dark'
 		hi CursorLine ctermbg 	= 235
 		hi CursorLineNr ctermbg = 235 
@@ -44,6 +47,26 @@ function! <SID>SynStack()
 endfunc
 
 autocmd ColorScheme * call Adjustcolors()
+
+function MathHighlights()
+    "" Define certain regions
+    " Block math. Look for "$$[anything]$$"
+    syn region math start=/\$\$/ end=/\$\$/
+    syn region math start=/\\begin{.*}/ end=/\\end{.*}/
+    " inline math. Look for "$[not $][anything]$"
+    syn match math_block '\$[^$]\(.\|\n\)\{-}\$'
+
+    " Fenced code blocks, used in GitHub Flavored Markdown (GFM)
+    syn region highlight_block start='```' end='```'
+
+    "" Actually highlight those regions.
+    hi link math Statement
+    hi link liquid Statement
+    hi link highlight_block Function
+    hi link math_block Function
+endfunction
+
+autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathHighlights()
 
 " BACKGROUND TRANSITION-------------------------------------------------------
 " At startup
@@ -157,7 +180,7 @@ let g:vimtex_fold_enabled = 0
 
 " Automatically cut lines
 function SetWidth()
-	if &filetype == 'tex' 
+	if index(['tex', 'markdown'], &filetype) >= 0
 		set tw=80
     elseif &filetype == 'text' 
 		set tw=50
