@@ -4,9 +4,6 @@
 [submodule ".vim/pack/colorschemes/iceberg.vim"]
 	path = .vim/pack/colorschemes/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim
-[submodule ".vim/pack/packages/start/nerdtree"]
-	path = .vim/pack/packages/start/nerdtree
-	url = https://github.com/preservim/nerdtree
 [submodule ".vim/pack/packages/start/vim-surround"]
 	path = .vim/pack/packages/start/vim-surround
 	url = https://github.com/tpope/vim-surround
@@ -19,21 +16,12 @@
 [submodule ".vim/pack/language-support/start/coc.nvim"]
 	path = .vim/pack/language-support/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
-[submodule ".vim/pack/language-support/start/slimv"]
-	path = .vim/pack/language-support/start/slimv
-	url = https://github.com/kovisoft/slimv
-[submodule ".vim/pack/language-support/start/lean.vim"]
-	path = .vim/pack/language-support/start/lean.vim
-	url = https://github.com/leanprover/lean.vim
 [submodule ".vim/pack/packages/start/battery.vim"]
 	path = .vim/pack/packages/start/battery.vim
 	url = https://github.com/lambdalisue/battery.vim
 [submodule ".vim/pack/colorschemes/start/iceberg.vim"]
 	path = .vim/pack/colorschemes/start/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim/
-[submodule ".vim/pack/language-support/start/haskell-vim"]
-	path = .vim/pack/language-support/start/haskell-vim
-	url = https://github.com/neovimhaskell/haskell-vim
 [submodule ".vim/pack/packages/start/fzf.vim"]
 	path = .vim/pack/packages/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
@@ -43,3 +31,9 @@
 [submodule ".vim/pack/packages/start/limelight.vim"]
 	path = .vim/pack/packages/start/limelight.vim
 	url = https://github.com/junegunn/limelight.vim
+[submodule ".vim/pack/packages/start/vim-css-color"]
+	path = .vim/pack/packages/start/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule ".vim/pack/packages/start/nnn.vim"]
+	path = .vim/pack/packages/start/nnn.vim
+	url = https://github.com/mcchrish/nnn.vim
