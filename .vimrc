@@ -291,14 +291,6 @@ let g:airline_mode_map = {
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 0
 
-" NERDTREE--------------------------------------------------------------------
- map <silent> <C-n> :NERDTreeToggle<CR>
-
-" Exit if last buffer remaining is NERDTree 
- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" NNN--------------------------------------------------------------------------
-
 " FZF--------------------------------------------------------------------------
 set rtp+=/usr/local/opt/fzf
 

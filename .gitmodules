@@ -34,6 +34,3 @@
 [submodule ".vim/pack/packages/start/vim-css-color"]
 	path = .vim/pack/packages/start/vim-css-color
 	url = https://github.com/ap/vim-css-color
-[submodule ".vim/pack/packages/start/nnn.vim"]
-	path = .vim/pack/packages/start/nnn.vim
-	url = https://github.com/mcchrish/nnn.vim

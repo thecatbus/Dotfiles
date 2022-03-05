@@ -51,3 +51,5 @@ export FZF_DEFAULT_OPTS='--info=hidden
                          --multi               
                          --cycle
                          --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
+
+# NNN
