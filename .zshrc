@@ -52,4 +52,7 @@ export FZF_DEFAULT_OPTS='--info=hidden
                          --cycle
                          --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
 
-# NNN
+# DDGR
+export DDGR_COLORS='eMecxy'
+export DISABLE_PROMPT_COLOR=1 
+alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
