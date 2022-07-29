@@ -34,3 +34,6 @@
 [submodule ".vim/pack/packages/start/vim-css-color"]
 	path = .vim/pack/packages/start/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule ".vim/pack/language-support/start/kotlin-vim"]
+	path = .vim/pack/language-support/start/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim

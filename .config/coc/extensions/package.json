@@ -6,6 +6,7 @@
     "coc-html-css-support": ">=0.4.0",
     "coc-htmlhint": ">=0.5.2",
     "coc-json": ">=1.4.1",
+    "coc-kotlin": ">=0.0.9",
     "coc-vimlsp": ">=0.12.5",
     "coc-vimtex": ">=1.1.1",
     "coc-yaml": ">=1.6.1"

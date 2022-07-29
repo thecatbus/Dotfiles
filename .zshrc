@@ -56,3 +56,4 @@ export FZF_DEFAULT_OPTS='--info=hidden
 export DDGR_COLORS='eMecxy'
 export DISABLE_PROMPT_COLOR=1 
 alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
+export PATH=$PATH:/usr/local/etc/rubber/bin

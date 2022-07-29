@@ -20,6 +20,7 @@ autocmd WinLeave 			* setlocal nocursorline
 function Adjustcolors()
 	hi Normal ctermbg	= NONE
 	hi Nontext ctermbg	= NONE
+    hi Conceal ctermbg  = NONE
 	hi LineNr ctermbg 	= NONE
 	hi EndOfBuffer ctermbg 	= NONE
 	hi SignColumn ctermbg 	= NONE
@@ -28,10 +29,12 @@ function Adjustcolors()
     hi markdownBold cterm = bold
     hi markdownItalic cterm = italic
 	if &background == 'dark'
+        hi Conceal ctermfg  = 51
 		hi CursorLine ctermbg 	= 235
 		hi CursorLineNr ctermbg = 235 
         let g:limelight_conceal_ctermfg = 240
     else 
+        hi Conceal ctermfg  = 31
 		hi CursorLine ctermbg 	= 253
 		hi CursorLineNr	ctermbg = 253
         let g:limelight_conceal_ctermfg = 247
@@ -177,6 +180,28 @@ let g:vimtex_view_method = "skim"
 let g:vimtex_viewer_general = "skim"
 let g:vimtex_view_automatic = 1
 let g:vimtex_fold_enabled = 0
+
+let g:vimtex_quickfix_ignore_filters = [
+          \ 'has changed',
+          \ 'Underfull', 
+          \ 'Overfull',
+          \ 'textexclamdown', 
+          \ 'author', 
+          \ 'starttoc',
+          \ 'counter',
+          \ 'Marginpar',
+          \]
+
+" Don't conceal in tex 
+function SetConceal()
+    if &filetype == 'tex'
+        set conceallevel=0
+    else 
+        set conceallevel=2
+    endif 
+endfunction
+
+autocmd VimEnter,WinEnter,BufWinEnter 	* call SetConceal()
 
 " Automatically cut lines
 function SetWidth()
