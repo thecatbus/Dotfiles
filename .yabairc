@@ -6,12 +6,16 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
 
-# Set all padding and gaps to 20pt (default: 0)
+# Set all padding and gaps to 8pt (default: 0)
 yabai -m config top_padding    8
 yabai -m config bottom_padding 8
 yabai -m config left_padding   8
 yabai -m config right_padding  8
 yabai -m config window_gap     8
+
+# floating windows are always on top (default: off)
+yabai -m config window_topmost on
+
 
 # New window spawn location (left+top or right+bottom)
 yabai -m config window_placement second_child
@@ -27,7 +31,7 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m mouse_drop_action swap
 
-yabai -m config focus_follows_mouse autofocus
+yabai -m config focus_follows_mouse off
 yabai -m config mouse_follows_focus off
 
 
@@ -53,15 +57,24 @@ yabai -m config window_border off
 
 # MANAGE
 
-yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
-yabai -m rule --add app="Dictionary" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Mail$" title="^New Message$" manage=off
+yabai -m rule --add app="^Messenger$" title="^Media Viewer$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Contacts$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Emoji$" manage=off
+
+yabai -m rule --add app="^Messenger$" space=2
+yabai -m rule --add app="^WhatsApp$" space=2
+yabai -m rule --add app="^Discord$" space=2
+
+yabai -m rule --add app="^Safari$" layer=below
+yabai -m rule --add app="^Reminders$" manage=on layer=below
+yabai -m rule --add app="^Calendar$" manage=on layer=below
 
 echo "yabai configuration loaded.."
