@@ -5,41 +5,41 @@ setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 PS1='%F{blue}%T μ%b%f ' 
 
 # VIM EMULATION 
-bindkey -v 
-export KEYTIMEOUT=1 	# Quicker switch between modes
-clear 			# On startup
-
-# CURSOR SHAPE DEPENDING ON VI MODE 
-function _set_cursor() {
-    if [[ $TMUX = '' ]]; then
-      echo -ne $1
-    else
-      echo -ne "\ePtmux;\e\e$1\e\\"
-    fi
-}
-
-# Remove mode switching delay.
-KEYTIMEOUT=5
-
-function _set_block_cursor() { _set_cursor '\e[1 q' }
-function _set_beam_cursor() { _set_cursor '\e[3 q' }
-
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-      _set_block_cursor
-  else
-      _set_beam_cursor
-  fi
-}
-zle -N zle-keymap-select
-# ensure beam cursor when starting new terminal
-precmd_functions+=(_set_beam_cursor) 
-# ensure insert mode and beam cursor when exiting vim
-zle-line-init() { zle -K viins; _set_beam_cursor }
-zle-line-finish() { _set_block_cursor }
-zle -N zle-line-finish
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#bindkey -v 
+#export KEYTIMEOUT=1 	# Quicker switch between modes
+#clear 			# On startup
+#
+## CURSOR SHAPE DEPENDING ON VI MODE 
+#function _set_cursor() {
+#    if [[ $TMUX = '' ]]; then
+#      echo -ne $1
+#    else
+#      echo -ne "\ePtmux;\e\e$1\e\\"
+#    fi
+#}
+#
+## Remove mode switching delay.
+#KEYTIMEOUT=5
+#
+#function _set_block_cursor() { _set_cursor '\e[1 q' }
+#function _set_beam_cursor() { _set_cursor '\e[3 q' }
+#
+#function zle-keymap-select {
+#  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+#      _set_block_cursor
+#  else
+#      _set_beam_cursor
+#  fi
+#}
+#zle -N zle-keymap-select
+## ensure beam cursor when starting new terminal
+#precmd_functions+=(_set_beam_cursor) 
+## ensure insert mode and beam cursor when exiting vim
+#zle-line-init() { zle -K viins; _set_beam_cursor }
+#zle-line-finish() { _set_block_cursor }
+#zle -N zle-line-finish
+#
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -74,3 +74,17 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# ZSH Autosuggestions 
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ZSH Vi Mode
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+
+source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh

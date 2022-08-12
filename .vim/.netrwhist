@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/parth/Projects/stoa-scrapper/src/scrapper'
+let g:netrw_dirhist_6='/Users/parth/Projects/stoa-scrapper'
+let g:netrw_dirhist_5='/Users/parth/Projects/stoa-scrapper/src/parser'
 let g:netrw_dirhist_4='/Users/parth/Projects/job-scraper/src/model'
 let g:netrw_dirhist_3='/Users/parth/Projects/job-scraper/src'
 let g:netrw_dirhist_2='/Users/parth/Projects/job-scraper'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_1='/Users/parth'
 let g:netrw_dirhist_0='/Users/parth/Maths Cambridge/II'
 let g:netrw_dirhist_9='/Users/parth/Maths Cambridge/II/Galois Theory'
 let g:netrw_dirhist_8='/Users/parth/Maths Cambridge/II'
-let g:netrw_dirhist_7='/Users/parth/Maths Cambridge/II/~'
-let g:netrw_dirhist_6='/Users/parth/Maths Cambridge/II'
-let g:netrw_dirhist_5='/Users/parth/Maths Cambridge'

@@ -1,7 +1,139 @@
 {
   "coc-python|global": {
-    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [],
-    "INTERPRETERS_CACHE_v3_CondaEnvService": [],
+    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/usr/local/anaconda3",
+        "envName": "base"
+      }
+    ],
+    "INTERPRETERS_CACHE_v3_CondaEnvService": [
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/usr/local/anaconda3",
+        "envName": "base"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+        "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/usr/local/anaconda3/envs/djangoTrial",
+        "envName": "djangoTrial"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "envName": "stoa-scrapper"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+        "companyDisplayName": "Anaconda, Inc.",
+        "type": "Conda",
+        "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "envName": "stoa-scrapper"
+      }
+    ],
     "INTERPRETERS_CACHE_v3_VirtualEnvService": [],
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.10.v3": {
       "data": {
@@ -26,7 +158,7 @@
         "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
         "fileHash": "cb24ead515aa10d6b1089321892782627c3fc2cacbf8dc907d8d56b0e9749fdaaf8d8969fc49025ef6ba1338799d10a8a4ccac62482b99247e66d9193a3a798b"
       },
-      "expiry": 1659423179195
+      "expiry": 1660125528467
     },
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.v3": {
       "data": {
@@ -51,7 +183,7 @@
         "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
         "fileHash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0"
       },
-      "expiry": 1659423179194
+      "expiry": 1660125528465
     },
     "/usr/local/bin/python3.10.v3": {
       "data": {
@@ -76,7 +208,7 @@
         "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
         "fileHash": "50a1f6ac0b88cda75d7505cba4ecc1f6f11bca8c467afaa1bc6ffc61a6fce734af167825fda6686d439b04b00f1ff98d3853f40c8a40a4fe744074ffcacc0c16"
       },
-      "expiry": 1659423179196
+      "expiry": 1660125528463
     },
     "/usr/local/bin/python3.v3": {
       "data": {
@@ -101,78 +233,129 @@
         "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
         "fileHash": "24c58c66d70d29f3b6866c694057849329bf8fd3a189184cfc43dbd2bfaae324f8c7dfdb8ae038aa02bf6e613c06c5fb11aecc691a122c12b5f71d0cbf2b372e"
       },
-      "expiry": 1659423179193
+      "expiry": 1660125528466
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
         "architecture": 3,
-        "path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.10.0-final",
+          "raw": "3.10.4-final",
           "major": 3,
           "minor": 10,
-          "patch": 0,
+          "patch": 4,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.10.0-final"
+          "version": "3.10.4-final"
         },
-        "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
-        "fileHash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0",
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
         "type": "Unknown"
       }
     ],
     "InterpreterAutoSeletionRule-currentPath": {
       "architecture": 3,
-      "path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.10.0-final",
+        "raw": "3.10.4-final",
         "major": 3,
         "minor": 10,
-        "patch": 0,
+        "patch": 4,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.10.0-final"
+        "version": "3.10.4-final"
       },
-      "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
-      "fileHash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0",
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
       "type": "Unknown"
     },
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
-      "path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.10.0-final",
+        "raw": "3.10.4-final",
         "major": 3,
         "minor": 10,
-        "patch": 0,
+        "patch": 4,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.10.0-final"
+        "version": "3.10.4-final"
       },
-      "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
-      "fileHash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0",
-      "type": "Unknown"
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "envName": "stoa-scrapper",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)"
     },
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -202,14 +385,14 @@
           "displayName": "Python 3.10.0 64-bit"
         }
       },
-      "expiry": 1659423179265
+      "expiry": 1660125528545
     },
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.10.0 64-bit",
         "hash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0-e94babffe769b976a44e42cb23e60e51"
       },
-      "expiry": 1659423179210
+      "expiry": 1660125528534
     },
     "/usr/bin/python3.v3": {
       "data": {
@@ -234,9 +417,101 @@
         "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8",
         "fileHash": "2cf899437b355956d38dca5811565677ee5f6f310fa8223180ad4d8e9f9c3c7da7927f704bbf3cf4aa35005ca6fec3b7791e59556da4625a508a146f764c30b1"
       },
-      "expiry": 1659423179214
+      "expiry": 1660125528446
     },
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.1",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "1a9135ea04adb002bbf8a55f633008f0981529fd51caa39a9513a29c61670a055886d5a5219fe8bb3e1a4eec6501b5e20af825d43937a1ce6b025027f2f8e4c6",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.10",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "946900fe4b97f1de8bbc03b1904a7884cdddb6933d8d73e96436050b3485fcb8cf3ac6037d63e537c85f468febac4bf3f64647ccc348e22cee15e4e0cb4d4c25",
+        "type": "Unknown"
+      },
       {
         "architecture": 3,
         "path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
@@ -354,6 +629,75 @@
       },
       {
         "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "61e14af6ca78c1e4ca5131c6344a34cefa032e96f936e0475133e56e1f5dcb61d683ce1cc35678f44e2e9c41f17fc90e47b7b33694049827e90a8c51d2f490c3",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "52187cd847f63f59f2b17a58af73e2ce8fc81775ba3f13b7db66cbd4b71e86e76281387d4aea68b01cdff50e4c83e309d46432615e15834bd094a53b75669780",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
         "path": "/usr/local/bin/python3",
         "version": {
           "options": {
@@ -428,38 +772,42 @@
         "displayName": "Python 3.10.0 64-bit",
         "hash": "24c58c66d70d29f3b6866c694057849329bf8fd3a189184cfc43dbd2bfaae324f8c7dfdb8ae038aa02bf6e613c06c5fb11aecc691a122c12b5f71d0cbf2b372e-dfadcfdf3310f37cf21c1883bd8cb086"
       },
-      "expiry": 1659423179262
+      "expiry": 1660125528537
     },
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.8.9 64-bit",
         "hash": "2cf899437b355956d38dca5811565677ee5f6f310fa8223180ad4d8e9f9c3c7da7927f704bbf3cf4aa35005ca6fec3b7791e59556da4625a508a146f764c30b1-b6ecd734cbfd853f1f653589a73bd4d4"
       },
-      "expiry": 1659423179263
+      "expiry": 1660125528538
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
-      "path": "/usr/local/bin/python3",
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.10.0-final",
+        "raw": "3.10.4-final",
         "major": 3,
         "minor": 10,
-        "patch": 0,
+        "patch": 4,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.10.0-final"
+        "version": "3.10.4-final"
       },
-      "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
-      "fileHash": "24c58c66d70d29f3b6866c694057849329bf8fd3a189184cfc43dbd2bfaae324f8c7dfdb8ae038aa02bf6e613c06c5fb11aecc691a122c12b5f71d0cbf2b372e",
-      "type": "Unknown",
-      "displayName": "Python 3.10.0 64-bit"
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "envName": "stoa-scrapper",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)"
     },
     "/usr/local/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -489,7 +837,7 @@
           "displayName": "Python 3.10.0 64-bit"
         }
       },
-      "expiry": 1659423179267
+      "expiry": 1660125528548
     },
     "/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -519,33 +867,523 @@
           "displayName": "Python 3.8.9 64-bit"
         }
       },
-      "expiry": 1659423179268
+      "expiry": 1660125528551
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
-      "path": "/usr/local/bin/python3",
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.10.0-final",
+        "raw": "3.10.4-final",
         "major": 3,
         "minor": 10,
-        "patch": 0,
+        "patch": 4,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.10.0-final"
+        "version": "3.10.4-final"
       },
-      "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
-      "fileHash": "24c58c66d70d29f3b6866c694057849329bf8fd3a189184cfc43dbd2bfaae324f8c7dfdb8ae038aa02bf6e613c06c5fb11aecc691a122c12b5f71d0cbf2b372e",
-      "type": "Unknown",
-      "displayName": "Python 3.10.0 64-bit"
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "envName": "stoa-scrapper",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)"
     },
-    "ProposeLSBanner": false
+    "ProposeLSBanner": false,
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python3.1.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python3.1",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+        "fileHash": "c40a50fc3c1cdf3effd39d0415a7b6edd14dddb55314309075ffc53e0350b39a2c1d7a049c8551e6a13999cd8804f8af670935e712332d887c468b44a587f0e0"
+      },
+      "expiry": 1659517958644
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+        "fileHash": "0a912c908a87ce1ed9130945d60681b608a96d324fbbcdd700cb5040eecfa6f6137763751778b6833273a098a819cb8b8d7f6ee7956366b12db48f4317339f54"
+      },
+      "expiry": 1659517958645
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+        "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9"
+      },
+      "expiry": 1660125530348
+    },
+    "/usr/local/anaconda3/bin/python3.9.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "52187cd847f63f59f2b17a58af73e2ce8fc81775ba3f13b7db66cbd4b71e86e76281387d4aea68b01cdff50e4c83e309d46432615e15834bd094a53b75669780"
+      },
+      "expiry": 1660125528450
+    },
+    "/usr/local/anaconda3/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862"
+      },
+      "expiry": 1660125528473
+    },
+    "/usr/local/anaconda3/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.12-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 12,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.12-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3",
+        "fileHash": "61e14af6ca78c1e4ca5131c6344a34cefa032e96f936e0475133e56e1f5dcb61d683ce1cc35678f44e2e9c41f17fc90e47b7b33694049827e90a8c51d2f490c3"
+      },
+      "expiry": 1660125528448
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python3.10.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python3.10",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+        "fileHash": "fcb271a1c4dcdf21c740c54ed7481b93c3806c502049517c8115c9110482a2d914b5e5ceafc5877da9bc8b5d23b60cce6b6942da6f6e9ef0be485bb67e23559a"
+      },
+      "expiry": 1659517958670
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.4 64-bit",
+        "hash": "0a912c908a87ce1ed9130945d60681b608a96d324fbbcdd700cb5040eecfa6f6137763751778b6833273a098a819cb8b8d7f6ee7956366b12db48f4317339f54-58e05d5b280ee28af4d85f2e536c85da"
+      },
+      "expiry": 1659517958673
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "0a912c908a87ce1ed9130945d60681b608a96d324fbbcdd700cb5040eecfa6f6137763751778b6833273a098a819cb8b8d7f6ee7956366b12db48f4317339f54",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.10.4-final",
+            "major": 3,
+            "minor": 10,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.10.4-final"
+          },
+          "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+          "fileHash": "0a912c908a87ce1ed9130945d60681b608a96d324fbbcdd700cb5040eecfa6f6137763751778b6833273a098a819cb8b8d7f6ee7956366b12db48f4317339f54",
+          "type": "Unknown",
+          "displayName": "Python 3.10.4 64-bit"
+        }
+      },
+      "expiry": 1659517958686
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.4 64-bit ('djangoTrial': conda)",
+        "hash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9-d1f78eadfa8a68eae66019bc4e9ade76"
+      },
+      "expiry": 1660115230828
+    },
+    "/usr/local/anaconda3/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.9.12 64-bit ('base': conda)",
+        "hash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862-04f7d85105a0d359c6f8fe5415f44e2b"
+      },
+      "expiry": 1660115230835
+    },
+    "/usr/local/anaconda3/envs/djangoTrial/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.10.4-final",
+            "major": 3,
+            "minor": 10,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.10.4-final"
+          },
+          "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+          "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/usr/local/anaconda3/envs/djangoTrial",
+          "envName": "djangoTrial",
+          "displayName": "Python 3.10.4 64-bit ('djangoTrial': conda)"
+        }
+      },
+      "expiry": 1660115230862
+    },
+    "/usr/local/anaconda3/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/anaconda3/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.9.12-final",
+            "major": 3,
+            "minor": 9,
+            "patch": 12,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.9.12-final"
+          },
+          "sysPrefix": "/usr/local/anaconda3",
+          "fileHash": "c523b6e0a0ff62591bb4bc077033bfec45e048ee20e4462ee2d3ed85a2453d5dc744808f204377a67b7f2a5e577393f8cf54fe290db53badf8d625fbd3bb6862",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/usr/local/anaconda3",
+          "envName": "base",
+          "displayName": "Python 3.9.12 64-bit ('base': conda)"
+        }
+      },
+      "expiry": 1660115230866
+    },
+    "CONDA_ENVIRONMENTS": {
+      "data": [
+        {
+          "name": "base",
+          "path": "/usr/local/anaconda3"
+        },
+        {
+          "name": "djangoTrial",
+          "path": "/usr/local/anaconda3/envs/djangoTrial"
+        },
+        {
+          "name": "stoa-scrapper",
+          "path": "/usr/local/anaconda3/envs/stoa-scrapper"
+        }
+      ]
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065"
+      },
+      "expiry": 1660125528250
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad"
+      },
+      "expiry": 1660115230909
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.1.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.1",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "1a9135ea04adb002bbf8a55f633008f0981529fd51caa39a9513a29c61670a055886d5a5219fe8bb3e1a4eec6501b5e20af825d43937a1ce6b025027f2f8e4c6"
+      },
+      "expiry": 1660125528248
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.10.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.10",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.4-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 4,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.4-final"
+        },
+        "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+        "fileHash": "946900fe4b97f1de8bbc03b1904a7884cdddb6933d8d73e96436050b3485fcb8cf3ac6037d63e537c85f468febac4bf3f64647ccc348e22cee15e4e0cb4d4c25"
+      },
+      "expiry": 1660125528246
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.4 64-bit",
+        "hash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065-074004249931caecca499b8a7bcfce8f"
+      },
+      "expiry": 1659777315581
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.10.4-final",
+            "major": 3,
+            "minor": 10,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.10.4-final"
+          },
+          "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+          "fileHash": "0ef0baa82fe8ff14d63d979dbbf3fbbe51c3c4ebf44224df1007b0e5e1dda0ac42d12a4ccfaa86e5203673e1454e897be04ead12778d79abb3ca051882d99065",
+          "type": "Unknown",
+          "displayName": "Python 3.10.4 64-bit"
+        }
+      },
+      "expiry": 1659777315600
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)",
+        "hash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad-48db11ebe6a107ff73cb0778ca681267"
+      },
+      "expiry": 1660115230869
+    },
+    "/usr/local/anaconda3/envs/stoa-scrapper/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+        "info": {
+          "architecture": 3,
+          "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.10.4-final",
+            "major": 3,
+            "minor": 10,
+            "patch": 4,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.10.4-final"
+          },
+          "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+          "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+          "companyDisplayName": "Anaconda, Inc.",
+          "type": "Conda",
+          "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+          "envName": "stoa-scrapper",
+          "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)",
+          "__store": true
+        }
+      },
+      "expiry": 1660115230848
+    }
   },
   "coc-python|/Users/parth/Projects/scrape-angellist": {
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
@@ -604,5 +1442,174 @@
     },
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/parth/Projects/django-trial/mysite/polls": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:081fb1d5d26f632bd1b40218225f1990": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:081fb1d5d26f632bd1b40218225f1990": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/parth/Projects/django-trial/mysite/polls": {
+      "architecture": 3,
+      "path": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.0-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 0,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.0-final"
+      },
+      "sysPrefix": "/Library/Frameworks/Python.framework/Versions/3.10",
+      "fileHash": "c04327641928d4a850c07c737487be049bf6f82e15a5da0a42df6caa806364294c098e42c2de404c403537fcf7817d2dd15110bfe0879ebf9d1b8803a291e3d0",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/parth/Projects/django-trial/mysite": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:f388c494b63aa6b10881aa47f95600de": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f388c494b63aa6b10881aa47f95600de": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/parth/Projects/django-trial/mysite": {
+      "architecture": 3,
+      "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.4-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.4-final"
+      },
+      "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+      "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/djangoTrial",
+      "envName": "djangoTrial",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('djangoTrial': conda)"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/parth/Projects/stoa-scrapper": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:130813c5749ec5e433bfc180e4b2a677": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:130813c5749ec5e433bfc180e4b2a677": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/parth/Projects/stoa-scrapper": {
+      "architecture": 3,
+      "path": "/usr/local/anaconda3/envs/djangoTrial/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.4-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.4-final"
+      },
+      "sysPrefix": "/usr/local/anaconda3/envs/djangoTrial",
+      "fileHash": "dc537ee37134215483f2d39d480099b553a9b503ccd27367157e19b30cf45137220e2bf5be5c4eb67ab5a11c3064e11d4540d9e095e85f6341ba761943eca0a9",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/djangoTrial",
+      "envName": "djangoTrial",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('djangoTrial': conda)"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/parth/Projects/stoa-scrapper/src/scrapper": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:1dd78ac3b540b707e4d7f32146a838f2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:1dd78ac3b540b707e4d7f32146a838f2": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/parth/Projects/stoa-scrapper/src/scrapper": {
+      "architecture": 3,
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.4-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.4-final"
+      },
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "envName": "stoa-scrapper",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:cdb794f9e6ff75b0bba4937807d8837e": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:cdb794f9e6ff75b0bba4937807d8837e": []
+  },
+  "coc-python|/Users/parth/Projects/stoa-scrapper/src": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:45e86a723e5439999be56f92b4df27e7": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:45e86a723e5439999be56f92b4df27e7": [],
+    "autoSelectedWorkspacePythonInterpreter-/Users/parth/Projects/stoa-scrapper/src": {
+      "architecture": 3,
+      "path": "/usr/local/anaconda3/envs/stoa-scrapper/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.4-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 4,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.4-final"
+      },
+      "sysPrefix": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "fileHash": "251a43cd864d45bd98a4e7fa4829a8b9373cde87c22f56560103757031993698d72061f99f76ab1487e8b2878f425bdd0780516e350a1583e9b4549209036bad",
+      "companyDisplayName": "Anaconda, Inc.",
+      "type": "Conda",
+      "envPath": "/usr/local/anaconda3/envs/stoa-scrapper",
+      "envName": "stoa-scrapper",
+      "cachedEntry": true,
+      "displayName": "Python 3.10.4 64-bit ('stoa-scrapper': conda)"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:cdb794f9e6ff75b0bba4937807d8837e": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:cdb794f9e6ff75b0bba4937807d8837e": []
   }
 }

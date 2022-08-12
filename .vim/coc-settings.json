@@ -1,5 +1,5 @@
 {
-  "diagnostic.warningSign": "‼",
+  "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "⍝",
   "diagnostic.hintSign": "¿",
   "languageserver": {

@@ -101,6 +101,10 @@ let &t_SI.="\e[3 q" "SI = INSERT mode
 let &t_SR.="\e[2 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
+"Awkward workaround for zsh-vi-mode bug where cursor shape on enter is
+"always underscore
+autocmd BufRead,BufNewFile * start 
+
 " ----------------------------------------------------------------------------
 " EDITOR SETTINGS 
 " ----------------------------------------------------------------------------
@@ -314,7 +318,6 @@ let g:airline_mode_map = {
 
 " Airline Extensions
 let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#nerdtree_statusline = 0
 
 " FZF--------------------------------------------------------------------------
 set rtp+=/usr/local/opt/fzf
