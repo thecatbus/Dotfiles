@@ -37,3 +37,12 @@
 [submodule ".vim/pack/language-support/start/kotlin-vim"]
 	path = .vim/pack/language-support/start/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim
+[submodule ".vim/pack/language-support/start/gap-vim"]
+	path = .vim/pack/language-support/start/gap-vim
+	url = https://github.com/wes1138/gap-vim
+[submodule ".vim/pack/language-support/start/vim-macaulay2"]
+	path = .vim/pack/language-support/start/vim-macaulay2
+	url = https://github.com/8d1h/vim-macaulay2
+[submodule ".vim/pack/packages/start/ultisnips"]
+	path = .vim/pack/packages/start/ultisnips
+	url = https://github.com/SirVer/ultisnips

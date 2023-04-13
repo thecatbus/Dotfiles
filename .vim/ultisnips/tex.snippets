@@ -1,0 +1,19 @@
+snippet \beg "begin{} / end{}" b
+\begin{$1}
+\end{$1}
+endsnippet
+
+snippet \( "Inline math" wA
+\(${1}\)`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet \[ "display math" w
+\[ 
+	$1
+.\] 
+endsnippet

@@ -2,6 +2,11 @@ set nocompatible
 set shortmess+=I 	" Disable default startup message 
 set noerrorbells visualbell t_vb=
 
+" Make sure you start a server
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
 " ----------------------------------------------------------------------------
 " APPEARANCE SETTINGS 
 " ----------------------------------------------------------------------------
@@ -11,6 +16,8 @@ set noshowmode 		" Disable mode display at bottom
 set conceallevel=2
 colorscheme iceberg
 
+set guifont=APL386\ Unicode:h18
+
 " CURSORLINE------------------------------------------------------------------
 autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
 autocmd WinLeave 			* setlocal nocursorline
@@ -18,26 +25,39 @@ autocmd WinLeave 			* setlocal nocursorline
 " COLOR AND HIGHLIGHT ADJUSTMENTS---------------------------------------------
 
 function Adjustcolors()
-	hi Normal ctermbg	= NONE
-	hi Nontext ctermbg	= NONE
-    hi Conceal ctermbg  = NONE
-	hi LineNr ctermbg 	= NONE
-	hi EndOfBuffer ctermbg 	= NONE
-	hi SignColumn ctermbg 	= NONE
+    set transparency=40
+    set blur=30
+	hi Normal ctermbg=NONE
+	hi Nontext ctermbg=NONE
+    hi Conceal ctermbg=NONE
+	hi LineNr ctermbg=NONE
+	hi LineNr guibg=NONE
+	hi EndOfBuffer ctermbg=NONE
+	hi EndOfBuffer guibg=NONE
+	hi SignColumn ctermbg=NONE
+	hi SignColumn guibg=NONE
     hi link markdownItalic Normal
     hi link markdownError Normal
-    hi markdownBold cterm = bold
-    hi markdownItalic cterm = italic
+    hi markdownBold cterm=bold
+    hi markdownItalic cterm=italic
 	if &background == 'dark'
-        hi Conceal ctermfg  = 51
-		hi CursorLine ctermbg 	= 235
-		hi CursorLineNr ctermbg = 235 
-        let g:limelight_conceal_ctermfg = 240
+        hi Conceal ctermfg=51
+        hi Conceal guifg=#00ffff
+		hi CursorLine ctermbg=235
+        hi CursorLine guibg=#FF262626
+		hi CursorLineNr ctermbg=235 
+        hi CursorLineNr guibg=#FF262626
+        let g:limelight_conceal_ctermfg=240
+        let g:limelight_conceal_guifg=240
     else 
-        hi Conceal ctermfg  = 31
-		hi CursorLine ctermbg 	= 253
-		hi CursorLineNr	ctermbg = 253
-        let g:limelight_conceal_ctermfg = 247
+        hi Conceal ctermfg=31
+        hi Conceal guifg=#0087af
+		hi CursorLine ctermbg=253
+        hi CursorLine guibg=#FFdadada
+		hi CursorLineNr	ctermbg=253
+        hi CursorLineNr guibg=#FFdadada
+        let g:limelight_conceal_ctermfg=247
+        let g:limelight_conceal_guifg=247
 	endif
 endfunction
 
@@ -100,10 +120,6 @@ nnoremap <leader>tt :call Setbackground()<CR>
 let &t_SI.="\e[3 q" "SI = INSERT mode
 let &t_SR.="\e[2 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-
-"Awkward workaround for zsh-vi-mode bug where cursor shape on enter is
-"always underscore
-autocmd BufRead,BufNewFile * start 
 
 " ----------------------------------------------------------------------------
 " EDITOR SETTINGS 
@@ -182,6 +198,8 @@ let g:haskell_indent_disable = 1
 let g:tex_flavor = "latex"
 let g:vimtex_view_method = "skim"
 let g:vimtex_viewer_general = "skim"
+let g:vimtex_view_skim_sync = 1
+let g:vimtex_view_skim_activate = 1
 let g:vimtex_view_automatic = 1
 let g:vimtex_fold_enabled = 0
 
@@ -383,3 +401,10 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" ULTISNIPS ------------------------------------------------------------------
+let g:UltiSnipsEditSplit = "context"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetDirectories = ["ultisnips"]

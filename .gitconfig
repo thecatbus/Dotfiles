@@ -4,5 +4,17 @@
 	required = true
 	clean = git-lfs clean -- %f
 [user]
-	email = pas201@cam.ac.uk
-	name = thecatbus
+	email = pas201@srcf.net
+	name = Parth Shimpi
+[core]
+	excludesfile = /Users/parth/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/parth/.stCommitMsg
+[pull]
+	rebase = true

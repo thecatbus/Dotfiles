@@ -40,6 +40,10 @@ PS1='%F{blue}%T μ%b%f '
 #zle -N zle-line-finish
 #
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#
+
+# ALIASES
+alias emacs="emacs -nw"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -76,7 +80,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # ZSH Autosuggestions 
-export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ZSH Vi Mode
