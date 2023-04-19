@@ -46,3 +46,6 @@
 [submodule ".vim/pack/packages/start/ultisnips"]
 	path = .vim/pack/packages/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule ".vim/pack/colorschemes/start/catppuccin.vim"]
+	path = .vim/pack/colorschemes/start/catppuccin.vim
+	url = https://github.com/catppuccin/vim

@@ -4,61 +4,38 @@ set noerrorbells visualbell t_vb=
 
 " Make sure you start a server
 if empty(v:servername) && exists('*remote_startserver')
-  call remote_startserver('VIM')
+  call remote_startserver('parth@vim')
 endif
 
 " ----------------------------------------------------------------------------
 " APPEARANCE SETTINGS 
 " ----------------------------------------------------------------------------
 
-set fillchars=vert:\│	" Because \| doesnt fill line
+set fillchars=eob:\ ,vert:\│ 
 set noshowmode 		" Disable mode display at bottom
 set conceallevel=2
-colorscheme iceberg
+set signcolumn=yes
 
-set guifont=APL386\ Unicode:h18
+set guifont=Hack:h16
+set guioptions= 
+set transparency=15
+set blur=40
 
 " CURSORLINE------------------------------------------------------------------
-autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
-autocmd WinLeave 			* setlocal nocursorline
+"autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
+"autocmd WinLeave 			* setlocal nocursorline
 
 " COLOR AND HIGHLIGHT ADJUSTMENTS---------------------------------------------
 
 function Adjustcolors()
-    set transparency=40
-    set blur=30
-	hi Normal ctermbg=NONE
-	hi Nontext ctermbg=NONE
-    hi Conceal ctermbg=NONE
-	hi LineNr ctermbg=NONE
-	hi LineNr guibg=NONE
-	hi EndOfBuffer ctermbg=NONE
-	hi EndOfBuffer guibg=NONE
-	hi SignColumn ctermbg=NONE
-	hi SignColumn guibg=NONE
+    " Diff colours in signcolumn
+    hi DiffAdd guibg=bg guifg=#A6E3A1
+    hi DiffChange guibg=bg guifg=#89B4FA
+    hi DiffDelete guibg=bg guifg=#FAB387
     hi link markdownItalic Normal
     hi link markdownError Normal
-    hi markdownBold cterm=bold
-    hi markdownItalic cterm=italic
-	if &background == 'dark'
-        hi Conceal ctermfg=51
-        hi Conceal guifg=#00ffff
-		hi CursorLine ctermbg=235
-        hi CursorLine guibg=#FF262626
-		hi CursorLineNr ctermbg=235 
-        hi CursorLineNr guibg=#FF262626
-        let g:limelight_conceal_ctermfg=240
-        let g:limelight_conceal_guifg=240
-    else 
-        hi Conceal ctermfg=31
-        hi Conceal guifg=#0087af
-		hi CursorLine ctermbg=253
-        hi CursorLine guibg=#FFdadada
-		hi CursorLineNr	ctermbg=253
-        hi CursorLineNr guibg=#FFdadada
-        let g:limelight_conceal_ctermfg=247
-        let g:limelight_conceal_guifg=247
-	endif
+    hi markdownBold gui=bold
+    hi markdownItalic gui=italic
 endfunction
 
 nmap <leader>sp :call <SID>SynStack()<CR>
@@ -96,9 +73,9 @@ autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathHighlights()
 function Startupbackground()
 	call system("defaults read -g AppleInterfaceStyle")
 	if v:shell_error == 1
-		set background=light
+        colorscheme catppuccin_latte
 	else 
-		set background=dark
+        colorscheme catppuccin_mocha
 	endif
 endfunction
 
@@ -107,9 +84,9 @@ call Startupbackground()
 " Manual change
 function Setbackground()
 	if &background == 'dark'
-		set background=light
+        colorscheme catppuccin_latte
 	else
-		set background=dark
+        colorscheme catppuccin_mocha
 	endif
 endfunction
 
@@ -243,12 +220,11 @@ autocmd VimEnter,WinEnter,BufWinEnter 	* call SetWidth()
 packloadall
 
 " COC ------------------------------------------------------------------------
-" set hidden 		" recommended
+set hidden 		" recommended
 " set nobackup		" some servers might have issues with backup files
 " set nowritebackup
 " set cmdheight=2	" more space for message display
 set updatetime=300
-" set signcolumn=yes	" Always show alert-sign (>>) column
 
 " Remap keys for gotos
 nmap <leader>dd <Plug>(coc-definition)
@@ -372,7 +348,6 @@ function! s:goyo_enter()
   "Turn off noise
   set noshowcmd
   set scrolloff=999
-  setlocal nocursorline
   "Quit on :q"
   let b:quitting = 0
   let b:quitting_bang = 0
@@ -386,7 +361,6 @@ function! s:goyo_leave()
   "Turn on options
   set showcmd
   set scrolloff=10
-  setlocal cursorline
   " Quit Vim if this is the only remaining buffer
   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
     if b:quitting_bang
