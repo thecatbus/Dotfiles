@@ -7,18 +7,12 @@
 [submodule ".vim/pack/packages/start/vim-surround"]
 	path = .vim/pack/packages/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule ".vim/pack/packages/start/vim-fugitive"]
-	path = .vim/pack/packages/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
 [submodule ".vim/pack/packages/start/airline"]
 	path = .vim/pack/packages/start/airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule ".vim/pack/language-support/start/coc.nvim"]
 	path = .vim/pack/language-support/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
-[submodule ".vim/pack/packages/start/battery.vim"]
-	path = .vim/pack/packages/start/battery.vim
-	url = https://github.com/lambdalisue/battery.vim
 [submodule ".vim/pack/colorschemes/start/iceberg.vim"]
 	path = .vim/pack/colorschemes/start/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim/
@@ -49,3 +43,6 @@
 [submodule ".vim/pack/colorschemes/start/catppuccin.vim"]
 	path = .vim/pack/colorschemes/start/catppuccin.vim
 	url = https://github.com/catppuccin/vim
+[submodule ".vim/pack/packages/start/vim-devicons"]
+	path = .vim/pack/packages/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons

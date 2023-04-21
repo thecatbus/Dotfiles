@@ -7,6 +7,15 @@ PS1='%F{blue}%T μ%b%f '
 # ALIASES
 alias vim="mvim --remote-silent"
 
+# ZSH Vi Mode
+source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
@@ -40,17 +49,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# ZSH Autosuggestions 
-export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# ZSH Vi Mode
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
-
-ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
-
-source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh

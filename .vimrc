@@ -16,10 +16,34 @@ set noshowmode 		" Disable mode display at bottom
 set conceallevel=2
 set signcolumn=yes
 
-set guifont=Hack:h16
+" GUI APPEARANCE -------------------------------------------------------------
+
+set guifont=APL386\ Nerd\ Font:h18
 set guioptions= 
 set transparency=15
 set blur=40
+
+function Winpreset_large()
+    winpos 20 20 
+    set lines=50 columns=148
+endfunction
+
+function Winpreset_medium()
+    winpos 350 250
+    set lines=28 columns=87
+endfunction
+
+function Winpreset_latex()
+    if &filetype == 'tex' 
+        winpos 20 20 
+        set lines=50 columns=87
+    endif
+endfunction
+
+nnoremap <leader>wl :call Winpreset_large()<CR>
+nnoremap <leader>wm :call Winpreset_medium()<CR>
+autocmd VimEnter,WinEnter,BufWinEnter 	* call Winpreset_latex()
+
 
 " CURSORLINE------------------------------------------------------------------
 "autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
@@ -173,10 +197,8 @@ let g:haskell_indent_disable = 1
 
 " LaTeX ----------------------------------------------------------------------
 let g:tex_flavor = "latex"
-let g:vimtex_view_method = "skim"
-let g:vimtex_viewer_general = "skim"
-let g:vimtex_view_skim_sync = 1
-let g:vimtex_view_skim_activate = 1
+let g:vimtex_view_method = 'general'
+let g:vimtex_view_general_viewer = 'sioyek'
 let g:vimtex_view_automatic = 1
 let g:vimtex_fold_enabled = 0
 
@@ -263,6 +285,15 @@ let g:battery#update_interval = 10000
 let g:battery#component_format = '%v%%%s'
 
 " AIRLINE --------------------------------------------------------------------
+
+" Airline Extensions
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+
+" let g:airline#extensions#hunks#non_zero_only = 0
+
 set ttimeoutlen =1 	" Delay when exiting insert mode
 let g:airline_inactive_collapse=1
 
@@ -285,33 +316,31 @@ function Shortpath()
 endfunction
 
 "Airline sections 
-let g:airline_section_error = ''
-let g:airline_section_warning = ''
-let g:airline_section_y = '%{battery#component()}'
-let g:airline_section_c = '%{Shortpath()}'
-let g:airline_mode_map = {
-      \ '__'     : '-',
-      \ 'c'      : 'C',
-      \ 'i'      : 'I',
-      \ 'ic'     : 'I',
-      \ 'ix'     : 'I',
-      \ 'n'      : 'N',
-      \ 'multi'  : 'M',
-      \ 'ni'     : 'N',
-      \ 'no'     : 'N',
-      \ 'R'      : 'R',
-      \ 'Rv'     : 'R',
-      \ 's'      : 'S',
-      \ 'S'      : 'S',
-      \ ''     : 'S',
-      \ 't'      : 'T',
-      \ 'v'      : 'V',
-      \ 'V'      : 'V',
-      \ ''     : 'V',
-      \ }
+"let g:airline_section_error = ''
+"let g:airline_section_warning = ''
+"let g:airline_section_y = '%{battery#component()}'
+"let g:airline_section_c = '%{Shortpath()}'
+"let g:airline_mode_map = {
+"      \ '__'     : '-',
+"      \ 'c'      : 'C',
+"      \ 'i'      : 'I',
+"      \ 'ic'     : 'I',
+"      \ 'ix'     : 'I',
+"      \ 'n'      : 'N',
+"      \ 'multi'  : 'M',
+"      \ 'ni'     : 'N',
+"      \ 'no'     : 'N',
+"      \ 'R'      : 'R',
+"      \ 'Rv'     : 'R',
+"      \ 's'      : 'S',
+"      \ 'S'      : 'S',
+"      \ ''     : 'S',
+"      \ 't'      : 'T',
+"      \ 'v'      : 'V',
+"      \ 'V'      : 'V',
+"      \ ''     : 'V',
+"      \ }
 
-" Airline Extensions
-let g:airline#extensions#coc#enabled = 1
 
 " FZF--------------------------------------------------------------------------
 set rtp+=/usr/local/opt/fzf
