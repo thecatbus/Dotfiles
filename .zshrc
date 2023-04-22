@@ -2,7 +2,7 @@
 setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 
 # PROMPT 
-PS1='%F{blue}%T μ%b%f ' 
+PS1='%F{blue}%T %b%f ' 
 
 # ALIASES
 alias vim="mvim --remote-silent"

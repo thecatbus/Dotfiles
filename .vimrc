@@ -1,6 +1,8 @@
 set nocompatible
-set shortmess+=I 	" Disable default startup message 
+set shortmess+=I 	" Disable default startup message
 set noerrorbells visualbell t_vb=
+
+helptags ALL
 
 " Make sure you start a server
 if empty(v:servername) && exists('*remote_startserver')
@@ -8,10 +10,10 @@ if empty(v:servername) && exists('*remote_startserver')
 endif
 
 " ----------------------------------------------------------------------------
-" APPEARANCE SETTINGS 
+" APPEARANCE SETTINGS
 " ----------------------------------------------------------------------------
 
-set fillchars=eob:\ ,vert:\│ 
+set fillchars=eob:\ ,vert:\│
 set noshowmode 		" Disable mode display at bottom
 set conceallevel=2
 set signcolumn=yes
@@ -19,39 +21,38 @@ set signcolumn=yes
 " GUI APPEARANCE -------------------------------------------------------------
 
 set guifont=APL386\ Nerd\ Font:h18
-set guioptions= 
+set guioptions=
 set transparency=15
 set blur=40
 
-function Winpreset_large()
-    winpos 20 20 
-    set lines=50 columns=148
+function! Winpreset_large()
+    winpos 20 20
+    set lines=48 columns=148
 endfunction
 
-function Winpreset_medium()
+function! Winpreset_medium()
     winpos 350 250
     set lines=28 columns=87
 endfunction
 
-function Winpreset_latex()
-    if &filetype == 'tex' 
-        winpos 20 20 
-        set lines=50 columns=87
+function! Winpreset_latex()
+    if &filetype == 'tex'
+        winpos 20 20
+        set lines=48 columns=87
     endif
 endfunction
 
 nnoremap <leader>wl :call Winpreset_large()<CR>
 nnoremap <leader>wm :call Winpreset_medium()<CR>
-autocmd VimEnter,WinEnter,BufWinEnter 	* call Winpreset_latex()
-
+autocmd BufNewFile	* call Winpreset_latex()
 
 " CURSORLINE------------------------------------------------------------------
-"autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline 
+"autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
 "autocmd WinLeave 			* setlocal nocursorline
 
 " COLOR AND HIGHLIGHT ADJUSTMENTS---------------------------------------------
 
-function Adjustcolors()
+function! Adjustcolors()
     " Diff colours in signcolumn
     hi DiffAdd guibg=bg guifg=#A6E3A1
     hi DiffChange guibg=bg guifg=#89B4FA
@@ -60,7 +61,7 @@ function Adjustcolors()
     hi link markdownError Normal
     hi markdownBold gui=bold
     hi markdownItalic gui=italic
-endfunction
+endfuncti48
 
 nmap <leader>sp :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -72,7 +73,7 @@ endfunc
 
 autocmd ColorScheme * call Adjustcolors()
 
-function MathHighlights()
+function! MathHighlights()
     "" Define certain regions
     " Block math. Look for "$$[anything]$$"
     syn region math start=/\$\$/ end=/\$\$/
@@ -94,24 +95,24 @@ autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathHighlights()
 
 " BACKGROUND TRANSITION-------------------------------------------------------
 " At startup
-function Startupbackground()
-	call system("defaults read -g AppleInterfaceStyle")
-	if v:shell_error == 1
+function! Startupbackground()
+    call system("defaults read -g AppleInterfaceStyle")
+    if v:shell_error == 1
         colorscheme catppuccin_latte
-	else 
+    else
         colorscheme catppuccin_mocha
-	endif
+    endif
 endfunction
 
 call Startupbackground()
 
 " Manual change
-function Setbackground()
-	if &background == 'dark'
+function! Setbackground()
+    if &background == 'dark'
         colorscheme catppuccin_latte
-	else
+    else
         colorscheme catppuccin_mocha
-	endif
+    endif
 endfunction
 
 " Convenient Keybind
@@ -123,10 +124,10 @@ let &t_SR.="\e[2 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 " ----------------------------------------------------------------------------
-" EDITOR SETTINGS 
+" EDITOR SETTINGS
 " ----------------------------------------------------------------------------
 
-syntax on 
+syntax on
 filetype plugin indent on
 set clipboard=unnamed	" Use system clipboard
 set showmatch 		" Highlight matching brackets
@@ -135,7 +136,7 @@ set relativenumber
 set autoindent
 set splitright		" Sane splits
 set splitbelow
-set linebreak		" Wrap  
+set linebreak		" Wrap
 
 set tabstop=4
 set shiftwidth=4
@@ -146,14 +147,14 @@ set scrolloff=10
 set noswapfile
 
 " SEARCH----------------------------------------------------------------------
-set ignorecase		
+set ignorecase
 set smartcase
-set incsearch 
+set incsearch
 
 " KEYBINDS--------------------------------------------------------------------
 set showcmd
 set mouse=c 		" Disable mouse
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 
 " Easier completion
 inoremap <C-j>	<C-n>
@@ -204,39 +205,39 @@ let g:vimtex_fold_enabled = 0
 
 let g:vimtex_quickfix_ignore_filters = [
           \ 'has changed',
-          \ 'Underfull', 
+          \ 'Underfull',
           \ 'Overfull',
-          \ 'textexclamdown', 
-          \ 'author', 
+          \ 'textexclamdown',
+          \ 'author',
           \ 'starttoc',
           \ 'counter',
           \ 'Marginpar',
           \]
 
-" Don't conceal in tex 
-function SetConceal()
+" Don't conceal in tex
+function! SetConceal()
     if &filetype == 'tex'
         set conceallevel=0
-    else 
+    else
         set conceallevel=2
-    endif 
+    endif
 endfunction
 
 autocmd VimEnter,WinEnter,BufWinEnter 	* call SetConceal()
 
 " Automatically cut lines
-function SetWidth()
-	if index(['tex', 'markdown'], &filetype) >= 0
-		set tw=80
-    elseif &filetype == 'text' 
-		set tw=50
-	endif 
+function! SetWidth()
+    if index(['tex', 'markdown'], &filetype) >= 0
+        set tw=80
+    elseif &filetype == 'text'
+        set tw=50
+    endif
 endfunction
 
 autocmd VimEnter,WinEnter,BufWinEnter 	* call SetWidth()
 
 " ----------------------------------------------------------------------------
-" PLUGIN SETTINGS 
+" PLUGIN SETTINGS
 " ----------------------------------------------------------------------------
 
 packloadall
@@ -280,67 +281,140 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-" BATTERY.VIM ----------------------------------------------------------------
-let g:battery#update_interval = 10000
-let g:battery#component_format = '%v%%%s'
-
 " AIRLINE --------------------------------------------------------------------
 
-" Airline Extensions
+
+set ttimeoutlen=1 	" Delay when exiting insert mode
+let g:airline_inactive_collapse = 1
+let g:airline_detect_modified = 0
+
+" Symbols
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#hunks#enabled = 1
 
-" let g:airline#extensions#hunks#non_zero_only = 0
-
-set ttimeoutlen =1 	" Delay when exiting insert mode
-let g:airline_inactive_collapse=1
-
-" Powerline symbols
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.dirty=' !'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.dirty=''
 let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_symbols.colnr = ', '
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.crypt = ''
+let g:airline_mode_map = {
+      \ '__'     : '-',
+      \ 'c'      : '',
+      \ 'i'      : '󰴓',
+      \ 'ic'     : '󰴓',
+      \ 'ix'     : '󰴓',
+      \ 'n'      : '󰇀',
+      \ 'niI'    : '󰆿',
+      \ 'niR'    : '󰆿',
+      \ 'niV'    : '󰆿',
+      \ 'multi'  : '󱢓',
+      \ 'ni'     : '󰆿',
+      \ 'no'     : '󰆿',
+      \ 'R'      : '',
+      \ 'Rv'     : '',
+      \ 's'      : '󰗧',
+      \ 'S'      : '󰗧',
+      \ ''     : '󰗧',
+      \ 't'      : '',
+      \ 'v'      : 'ﳳ',
+      \ 'V'      : '',
+      \ ''     : '',
+      \ }
 
-"Shorten filepath
-function Shortpath()
-	if expand('%:p:h')=='/'
-		return '/'.expand('%:t')
-	elseif expand('%p:h:h')=='/'
-		return '/'.expand('%:p:h:t').'/'.expand('%:t')
-	else
-		return '../'.expand('%:p:h:h:t').'/'.expand('%:p:h:t').'/'.expand('%:t')
-	endif
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['tex'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bib'] = '󱨡'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['markdown'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['m2'] = '󰡱'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['gap'] = '󰘨'
+
+"Airline sections
+
+function! Shortpath()
+    let shortpath = expand('%:t')
+
+    if expand('%:p:h')!='/'
+        let shortpath = expand('%:p:h:t').'/'.shortpath
+    endif
+    if expand('%:p:h:h')!='/'
+        let shortpath = '../'.shortpath
+    endif
+
+    let currentfunction = get(b:,'coc_current_function','')
+    if currentfunction != ''
+        let shortpath = shortpath.'/'.currentfunction
+    endif
+
+    return shortpath
 endfunction
 
-"Airline sections 
-"let g:airline_section_error = ''
-"let g:airline_section_warning = ''
-"let g:airline_section_y = '%{battery#component()}'
-"let g:airline_section_c = '%{Shortpath()}'
-"let g:airline_mode_map = {
-"      \ '__'     : '-',
-"      \ 'c'      : 'C',
-"      \ 'i'      : 'I',
-"      \ 'ic'     : 'I',
-"      \ 'ix'     : 'I',
-"      \ 'n'      : 'N',
-"      \ 'multi'  : 'M',
-"      \ 'ni'     : 'N',
-"      \ 'no'     : 'N',
-"      \ 'R'      : 'R',
-"      \ 'Rv'     : 'R',
-"      \ 's'      : 'S',
-"      \ 'S'      : 'S',
-"      \ ''     : 'S',
-"      \ 't'      : 'T',
-"      \ 'v'      : 'V',
-"      \ 'V'      : 'V',
-"      \ ''     : 'V',
-"      \ }
+let g:webdevicons_enable_airline_statusline = 0
+let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
+let g:airline_skip_empty_sections = 1
+function! AirlineInit()
+    let g:airline_section_b = airline#section#create_left(['(%2v,%l)'])
+    let g:airline_section_c = airline#section#create_left(['%{Shortpath()}','readonly','coc_status','lsp_progress'])
+    let g:airline_section_x = airline#section#create_right(['branch'])
+    let g:airline_section_y = airline#section#create_right(['hunks'])
 
+    let filetypes = get(g:, 'airline#extensions#wordcount#filetypes',
+        \ ['asciidoc', 'help', 'mail', 'markdown', 'rmd', 'nroff', 'org', 'rst', 'plaintex', 'tex', 'text'])
+    if index(filetypes, &filetype) <= -1
+        let g:airline_section_z = airline#section#create_right([' %L'])
+    else
+        let g:airline_section_z = airline#section#create_right([])
+    endif
+    let g:airline#extensions#wordcount#formatter#default#fmt = ' %s'
+    let g:airline#extensions#wordcount#formatter#default#fmt_short = ' %s'
+
+    let g:airline_section_z = get(g:, 'airline_section_z', '')
+    let g:airline_section_z .= ' | '.'%{WebDevIconsGetFileTypeSymbol()}'
+
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
+
+"Airline-fzf
+let g:airline#extensions#fzf#enabled = 1
+
+" Airline-git
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#hunks#hunk_symbols = [' ', ' ', ' ']
+
+" Airline-coc
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#show_coc_status = 1
+let airline#extensions#coc#error_symbol = ' '
+let airline#extensions#coc#stl_format_err = '%C[%L]'
+let airline#extensions#coc#warning_symbol = ' '
+let airline#extensions#coc#stl_format_warn = '%C[%L]'
+
+" Airline-vimtex
+let g:airline#extensions#vimtex#enabled=0
+let g:airline#extensions#vimtex#wordcount=1
+let g:airline#extensions#vimtex#left="{"
+let g:airline#extensions#vimtex#right="}"
+
+" Vimtex state indicators:
+
+" the current tex file is the main project file (nothing is shown by default) >
+let g:airline#extensions#vimtex#main = ""
+" the current tex file is a subfile of the project and the compilation is set for the main file >
+let g:airline#extensions#vimtex#sub_main = "m"
+" the current tex file is a subfile of the project and the compilation is set for this subfile >
+let g:airline#extensions#vimtex#sub_local = "l"
+" single compilation is running >
+let g:airline#extensions#vimtex#compiled = "c₁"
+" continuous compilation is running >
+let g:airline#extensions#vimtex#continuous = "c"
+" viewer is opened >
+let g:airline#extensions#vimtex#viewer = "v"
 
 " FZF--------------------------------------------------------------------------
 set rtp+=/usr/local/opt/fzf
@@ -369,7 +443,7 @@ nnoremap <silent> <Leader>g :Commits<CR>
 nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>hf :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
-nnoremap <silent> <Leader>h/ :History/<CR> 
+nnoremap <silent> <Leader>h/ :History/<CR>
 
 " GOYO/Limelight -------------------------------------------------------------
 
@@ -411,3 +485,12 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsSnippetDirectories = ["ultisnips"]
+
+" GIT ------------------------------------------------------------------------
+
+let g:gitgutter_sign_added              = '▍'
+let g:gitgutter_sign_modified           = '▍'
+let g:gitgutter_sign_removed            = '_'
+let g:gitgutter_sign_removed_first_line = '‾'
+let g:gitgutter_sign_removed_above_and_below = '_¯'
+let g:gitgutter_sign_modified_removed   = '▍_'

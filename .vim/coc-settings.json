@@ -1,8 +1,9 @@
-{
-  "diagnostic.warningSign": "!",
-  "diagnostic.infoSign": "⍝",
-  "diagnostic.hintSign": "¿",
-  "diagnostic.errorSign": "!!",
+{ 
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.errorSign": "",
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
