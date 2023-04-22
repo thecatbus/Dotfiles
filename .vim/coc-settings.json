@@ -1,9 +1,14 @@
-{ 
+{
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
   "diagnostic.errorSign": "",
+  "git.changedSign.text":"▍",
+  "git.changeRemovedSign.text":"▍",
+  "git.addedSign.text":"▍",
+  "git.removedSign.text":"▁",
+  "git.topRemovedSign.text":"▔",
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",

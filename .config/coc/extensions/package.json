@@ -10,6 +10,9 @@
     "coc-python": ">=1.2.13",
     "coc-vimlsp": ">=0.12.5",
     "coc-vimtex": ">=1.1.5",
-    "coc-yaml": ">=1.6.1"
-  }
+    "coc-yaml": ">=1.6.1",
+    "coc-git": ">=2.6.1"
+  },
+  "disabled": [],
+  "locked": []
 }

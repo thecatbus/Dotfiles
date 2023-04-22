@@ -293,7 +293,7 @@ let g:airline_powerline_fonts = 1
 
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.dirty=''
+let g:airline_symbols.dirty='()'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.colnr = ', '
 let g:airline_symbols.linenr = ''
@@ -328,6 +328,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bib'] = '󱨡'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['markdown'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['m2'] = '󰡱'
@@ -488,9 +489,3 @@ let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
 " GIT ------------------------------------------------------------------------
 
-let g:gitgutter_sign_added              = '▍'
-let g:gitgutter_sign_modified           = '▍'
-let g:gitgutter_sign_removed            = '_'
-let g:gitgutter_sign_removed_first_line = '‾'
-let g:gitgutter_sign_removed_above_and_below = '_¯'
-let g:gitgutter_sign_modified_removed   = '▍_'
