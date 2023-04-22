@@ -54,14 +54,21 @@ autocmd BufNewFile	* call Winpreset_latex()
 
 function! Adjustcolors()
     " Diff colours in signcolumn
-    hi DiffAdd guibg=bg guifg=#A6E3A1
-    hi DiffChange guibg=bg guifg=#89B4FA
-    hi DiffDelete guibg=bg guifg=#FAB387
+    if &background == 'light'
+        hi DiffAdd guibg=bg guifg=#a6d189     
+        hi DiffChange guibg=bg guifg=#04a5e5        
+        hi DiffDelete guibg=bg guifg=#e64553
+    else
+        hi DiffAdd guibg=bg guifg=#a6e3a1
+        hi DiffChange guibg=bg guifg=#8caaee
+        hi DiffDelete guibg=bg guifg=#ea999c
+    endif
+
     hi link markdownItalic Normal
     hi link markdownError Normal
     hi markdownBold gui=bold
     hi markdownItalic gui=italic
-endfuncti48
+endfunction
 
 nmap <leader>sp :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -488,4 +495,3 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
 " GIT ------------------------------------------------------------------------
-
