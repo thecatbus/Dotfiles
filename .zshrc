@@ -6,7 +6,12 @@ PS1='%F{blue}%T %b%f '
 
 # ALIASES
 vim() {
-    if ("$1"==""); then mvim else mvim "$1" --remote-silent fi
+    if [[ -z "$1" ]] 
+    then 
+        mvim 
+    else 
+        mvim --remote-silent "$1"
+    fi
 }
 
 emacs() {
