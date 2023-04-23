@@ -58,10 +58,20 @@ function! Adjustcolors()
         hi DiffAdd guibg=bg guifg=#a6d189     
         hi DiffChange guibg=bg guifg=#04a5e5        
         hi DiffDelete guibg=bg guifg=#e64553
+        let g:terminal_ansi_colors = [
+            \'#8c8fa1', '#e64553', '#179299', '#fe640b',
+            \'#209fb5', '#7287fd', '#209fb5', '#eff1f5',
+            \'#4c4f69', '#d20f39', '#40a02b', '#df8e1d',
+            \'#1e66f5', '#ea76cb', '#04a5e5', '#dce0e8' ]
     else
         hi DiffAdd guibg=bg guifg=#a6e3a1
         hi DiffChange guibg=bg guifg=#8caaee
         hi DiffDelete guibg=bg guifg=#ea999c
+        let g:terminal_ansi_colors = [
+            \'#1e1e2e', '#f38ba8', '#94e2d5', '#fab387',
+            \'#89b4fa', '#b4befe', '#74c7ec', '#6c7086',
+            \'#11111b', '#eba0ac', '#a6e3a1', '#f9e2af',
+            \'#74c7ec', '#f5c2e7', '#89dceb', '#cdd6f4' ]
     endif
 
     hi link markdownItalic Normal
@@ -385,6 +395,9 @@ function! AirlineInit()
 
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
+
+" Airline-term
+let g:airline#extensions#term#enabled = 0
 
 "Airline-fzf
 let g:airline#extensions#fzf#enabled = 1
