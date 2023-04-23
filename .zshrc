@@ -15,7 +15,7 @@ vim() {
 }
 
 emacs() {
-    emacsclient --reuse-frame --alternate-editor="" "$1" &
+    emacsclient --quiet --suppress-output --reuse-frame --alternate-editor="" "$1" &
 }
 
 # ZSH Vi Mode
