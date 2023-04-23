@@ -5,7 +5,13 @@ setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 PS1='%F{blue}%T %b%f ' 
 
 # ALIASES
-alias vim="mvim --remote-silent"
+vim() {
+    if ("$1"==""); then mvim else mvim "$1" --remote-silent fi
+}
+
+emacs() {
+    emacsclient --reuse-frame --alternate-editor="" "$1" &
+}
 
 # ZSH Vi Mode
 source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
