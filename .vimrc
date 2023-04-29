@@ -27,7 +27,7 @@ set blur=40
 
 function! Winpreset_large()
     winpos 20 20
-    set lines=48 columns=148
+    set lines=50 columns=148
 endfunction
 
 function! Winpreset_medium()
@@ -35,16 +35,14 @@ function! Winpreset_medium()
     set lines=28 columns=87
 endfunction
 
-function! Winpreset_latex()
-    if &filetype == 'tex'
-        winpos 20 20
-        set lines=48 columns=87
-    endif
+function! Winpreset_preview()
+    winpos 20 20
+    set lines=50 columns=87
 endfunction
 
 nnoremap <leader>wl :call Winpreset_large()<CR>
 nnoremap <leader>wm :call Winpreset_medium()<CR>
-autocmd BufNewFile	* call Winpreset_latex()
+nnoremap <leader>wp :call Winpreset_preview()<CR>
 
 " CURSORLINE------------------------------------------------------------------
 "autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
@@ -55,24 +53,35 @@ autocmd BufNewFile	* call Winpreset_latex()
 function! Adjustcolors()
     " Diff colours in signcolumn
     if &background == 'light'
-        hi DiffAdd guibg=bg guifg=#a6d189     
-        hi DiffChange guibg=bg guifg=#04a5e5        
+        hi DiffAdd guibg=bg guifg=#a6d189
+        hi DiffChange guibg=bg guifg=#04a5e5
         hi DiffDelete guibg=bg guifg=#e64553
         let g:terminal_ansi_colors = [
-            \'#8c8fa1', '#e64553', '#179299', '#fe640b',
-            \'#209fb5', '#7287fd', '#209fb5', '#eff1f5',
-            \'#4c4f69', '#d20f39', '#40a02b', '#df8e1d',
-            \'#1e66f5', '#ea76cb', '#04a5e5', '#dce0e8' ]
+            \'#4c4f69', '#d20f39', '#40a02b', '#df8e1d', '#1e66f5', '#ea76cb', '#209fb5', '#ccd0da',
+            \'#6c6f85', '#d20f39', '#40a02b', '#df8e1d', '#1e66f5', '#ea76cb', '#209fb5', '#eff1f5' ]
     else
         hi DiffAdd guibg=bg guifg=#a6e3a1
         hi DiffChange guibg=bg guifg=#8caaee
         hi DiffDelete guibg=bg guifg=#ea999c
         let g:terminal_ansi_colors = [
-            \'#1e1e2e', '#f38ba8', '#94e2d5', '#fab387',
-            \'#89b4fa', '#b4befe', '#74c7ec', '#6c7086',
-            \'#11111b', '#eba0ac', '#a6e3a1', '#f9e2af',
-            \'#74c7ec', '#f5c2e7', '#89dceb', '#cdd6f4' ]
+            \'#1e1e2e', '#f38ba8', '#a6e3a1', '#f9e2af', '#89b4fa', '#f5c2e7', '#94e2d5', '#cdd6f4',
+            \'#6c7086', '#f38ba8', '#a6e3a1', '#f9e2af', '#89b4fa', '#f5c2e7', '#94e2d5', '#a6adc8' ]
     endif
+
+    let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      [0],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'Normal'],
+      \ 'bg+':     [0],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
 
     hi link markdownItalic Normal
     hi link markdownError Normal
@@ -209,6 +218,8 @@ inoremap <Up> <C-o>gk
 " LANGUAGE SPECIFIC CONFIGURATIONS
 " ----------------------------------------------------------------------------
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
+
 " Haskell --------------------------------------------------------------------
 autocmd filetype haskell autocmd BufWritePre <buffer> call CocAction('format')
 let g:haskell_indent_disable = 1
@@ -298,8 +309,33 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-" AIRLINE --------------------------------------------------------------------
+" COC EXPLORER ---------------------------------------------------------------
 
+nmap <leader>e :CocCommand explorer<CR>
+
+" COC SNIPPETS ---------------------------------------------------------------
+
+" imap <C-l> <Plug>(coc-snippets-expand)
+" vmap <C-j> <Plug>(coc-snippets-select)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+" xmap <leader>x  <Plug>(coc-convert-snippet) " Create new snippet with current selected text, visual mode only.
+
+" GIT ------------------------------------------------------------------------
+nmap gj <Plug>(coc-git-nextchunk)
+nmap gk <Plug>(coc-git-prevchunk)
+nmap cj <Plug>(coc-git-nextconflict)
+nmap ck <Plug>(coc-git-prevconflict)
+nmap gd <Plug>(coc-git-chunkinfo)
+nmap gc <Plug>(coc-git-commit)
+nmap gs :CocCommand git.chunkStage<CR>
+nmap gsu :CocCommand git.chunkUnstage<CR>
+
+" CTRL P ---------------------------------------------------------------------
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_show_hidden = 1
+
+" AIRLINE --------------------------------------------------------------------
 
 set ttimeoutlen=1 	" Delay when exiting insert mode
 let g:airline_inactive_collapse = 1
@@ -376,7 +412,7 @@ let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
 let g:airline_skip_empty_sections = 1
 function! AirlineInit()
     let g:airline_section_b = airline#section#create_left(['(%2v,%l)'])
-    let g:airline_section_c = airline#section#create_left(['%{Shortpath()}','readonly','coc_status','lsp_progress'])
+    let g:airlin_section_c = airline#section#create_left(['%{Shortpath()}','readonly','coc_status','lsp_progress'])
     let g:airline_section_x = airline#section#create_right(['branch'])
     let g:airline_section_y = airline#section#create_right(['hunks'])
 
@@ -400,9 +436,10 @@ autocmd User AirlineAfterInit call AirlineInit()
 let g:airline#extensions#term#enabled = 0
 
 "Airline-fzf
-let g:airline#extensions#fzf#enabled = 1
+"let g:airline#extensions#fzf#enabled = 1
 
 " Airline-git
+let g:airline#extensions#hunks#coc_git = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -418,7 +455,7 @@ let airline#extensions#coc#stl_format_warn = '%C[%L]'
 
 " Airline-vimtex
 let g:airline#extensions#vimtex#enabled=0
-let g:airline#extensions#vimtex#wordcount=1
+let g:airline#extensions#vimtex#wordcount=0
 let g:airline#extensions#vimtex#left="{"
 let g:airline#extensions#vimtex#right="}"
 
@@ -438,33 +475,20 @@ let g:airline#extensions#vimtex#continuous = "c"
 let g:airline#extensions#vimtex#viewer = "v"
 
 " FZF--------------------------------------------------------------------------
-set rtp+=/usr/local/opt/fzf
-
-let g:fzf_preview_window = []
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Comment'],
-  \ 'bg':      [-1],
-  \ 'hl':      ['fg', 'Label'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     [-1],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']}
-
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <Leader>/ :BLines<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>' :Marks<CR>
-nnoremap <silent> <Leader>g :Commits<CR>
-nnoremap <silent> <Leader>H :Helptags<CR>
-nnoremap <silent> <Leader>hf :History<CR>
-nnoremap <silent> <Leader>h: :History:<CR>
-nnoremap <silent> <Leader>h/ :History/<CR>
+" set rtp+=/usr/local/opt/fzf
+"
+" let g:fzf_preview_window = []
+" let g:fzf_layout = { 'down': '40%' }
+"
+" nnoremap <silent> <C-p> :Files<CR>
+" nnoremap <silent> <Leader>/ :BLines<CR>
+" nnoremap <silent> <Leader>b :Buffers<CR>
+" nnoremap <silent> <Leader>' :Marks<CR>
+" nnoremap <silent> <Leader>g :Commits<CR>
+" nnoremap <silent> <Leader>H :Helptags<CR>
+" nnoremap <silent> <Leader>hf :History<CR>
+" nnoremap <silent> <Leader>h: :History:<CR>
+" nnoremap <silent> <Leader>h/ :History/<CR>
 
 " GOYO/Limelight -------------------------------------------------------------
 
@@ -501,10 +525,9 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " ULTISNIPS ------------------------------------------------------------------
-let g:UltiSnipsEditSplit = "context"
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsSnippetDirectories = ["ultisnips"]
+" let g:UltiSnipsEditSplit = "context"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
-" GIT ------------------------------------------------------------------------

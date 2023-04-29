@@ -1,5 +1,10 @@
 # OPTIONS 
 setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
+export EDITOR="vim"
+
+# COMPLETIONS
+autoload -U compinit; compinit
+_comp_options+=(globdots)
 
 # PROMPT 
 PS1='%F{blue}%T %b%f ' 
@@ -18,6 +23,20 @@ emacs() {
     emacsclient --quiet --suppress-output --reuse-frame --alternate-editor="" "$1" &
 }
 
+tex-project() {
+    curl -L -O https://github.com/thecatbus/tex-template/archive/main.zip 
+    unzip main.zip && rm main.zip
+
+    if [[ ! -z "$1" ]] 
+    then 
+        mv tex-template-main "$1" && cd "$1"
+    else 
+        cd tex-template-main
+    fi
+
+    git init
+}
+
 # ZSH Vi Mode
 source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
@@ -28,23 +47,23 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-export FZF_CTRL_T_COMMAND='ag --hidden -g ""'
-export FZF_DEFAULT_OPTS='--info=hidden
-                         --height 30% 
-                         --layout=reverse 
-                         --multi               
-                         --cycle
-                         --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+#export FZF_CTRL_T_COMMAND='ag --hidden -g ""'
+#export FZF_DEFAULT_OPTS='--info=hidden
+#                         --height 30% 
+#                         --layout=reverse 
+#                         --multi               
+#                         --cycle
+#                         --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
 
 # DDGR
-export DDGR_COLORS='eMecxy'
-export DISABLE_PROMPT_COLOR=1 
-alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
+# export DDGR_COLORS='eMecxy'
+# export DISABLE_PROMPT_COLOR=1 
+# alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
 
 # PATH
-export PATH="$PATH:/usr/local/etc/rubber/bin:/usr/local/anaconda3/bin"
+export PATH="$PATH:/usr/local/etc/rubber/bin:/usr/local/anaconda3/bin:/Users/parth/Notebook/.scripts"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

@@ -16,9 +16,6 @@
 [submodule ".vim/pack/colorschemes/start/iceberg.vim"]
 	path = .vim/pack/colorschemes/start/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim/
-[submodule ".vim/pack/packages/start/fzf.vim"]
-	path = .vim/pack/packages/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
 [submodule ".vim/pack/packages/start/goyo.vim"]
 	path = .vim/pack/packages/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
@@ -28,18 +25,6 @@
 [submodule ".vim/pack/packages/start/vim-css-color"]
 	path = .vim/pack/packages/start/vim-css-color
 	url = https://github.com/ap/vim-css-color
-[submodule ".vim/pack/language-support/start/kotlin-vim"]
-	path = .vim/pack/language-support/start/kotlin-vim
-	url = https://github.com/udalov/kotlin-vim
-[submodule ".vim/pack/language-support/start/gap-vim"]
-	path = .vim/pack/language-support/start/gap-vim
-	url = https://github.com/wes1138/gap-vim
-[submodule ".vim/pack/language-support/start/vim-macaulay2"]
-	path = .vim/pack/language-support/start/vim-macaulay2
-	url = https://github.com/8d1h/vim-macaulay2
-[submodule ".vim/pack/packages/start/ultisnips"]
-	path = .vim/pack/packages/start/ultisnips
-	url = https://github.com/SirVer/ultisnips
 [submodule ".vim/pack/colorschemes/start/catppuccin.vim"]
 	path = .vim/pack/colorschemes/start/catppuccin.vim
 	url = https://github.com/catppuccin/vim
@@ -52,3 +37,6 @@
 [submodule ".vim/pack/packages/start/vim-fugitive"]
 	path = .vim/pack/packages/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/packages/start/ctrlp.vim"]
+	path = .vim/pack/packages/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
