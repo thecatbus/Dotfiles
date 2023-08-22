@@ -1,22 +1,19 @@
 {
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
   "diagnostic.errorSign": "",
-
   "git.changedSign.text":"▍",
   "git.changeRemovedSign.text":"▍",
   "git.addedSign.text":"▍",
   "git.removedSign.text":"▁",
   "git.topRemovedSign.text":"▔",
-
-  "explorer.root.strategies": [ 
-      "workspace", 
-      "cwd", 
-      "sourceBuffer", 
-      "reveal" 
+  "explorer.root.strategies": [
+      "workspace",
+      "cwd",
+      "sourceBuffer",
+      "reveal"
   ],
   "explorer.icon.enableNerdfont":true,
   "explorer.icon.source":"vim-devicons",
@@ -24,34 +21,37 @@
   "explorer.file.root.template":"[icon] [root] [fullpath]",
   "explorer.file.child.template":"[2][selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
   "explorer.git.showIgnored":false,
-
   "snippets.ultisnips.directories":["snippets"],
-
-  "languageserver": {
+"languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
+    },
     "haskell": {
-      "command": "haskell-language-server-wrapper",
-      "args": [
-        "--lsp"
-      ],
-      "rootPatterns": [
-        ".stack.yaml",
-        ".hie-bios",
-        "BUILD.bazel",
-        "cabal.config",
-        "package.yaml"
-      ],
-      "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ],
-      "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true,
-          "maxNumberOfProblems": 10,
-          "completionSnippetsOn": true
+        "command": "haskell-language-server-wrapper",
+        "args": [
+            "--lsp"
+        ],
+        "rootPatterns": [
+            ".stack.yaml",
+            ".hie-bios",
+            "BUILD.bazel",
+            "cabal.config",
+            "package.yaml"
+        ],
+        "filetypes": [
+            "hs",
+            "lhs",
+            "haskell"
+        ],
+        "initializationOptions": {
+            "languageServerHaskell": {
+                "hlintOn": true,
+                "maxNumberOfProblems": 10,
+                "completionSnippetsOn": true
+            }
         }
-      }
     }
-  }
+}
 }

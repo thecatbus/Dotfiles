@@ -1903,5 +1903,6 @@
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_PipEnvService:13d9d951034523b8bcb3cd887f754e5f": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:13d9d951034523b8bcb3cd887f754e5f": []
-  }
+  },
+  "coc-explorer|global": {}
 }

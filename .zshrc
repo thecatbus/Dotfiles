@@ -1,4 +1,4 @@
-# OPTIONS 
+# OPTIONS
 setopt HIST_SAVE_NO_DUPS	# Do not write duplicate events to history
 export EDITOR="vim"
 
@@ -6,31 +6,31 @@ export EDITOR="vim"
 autoload -U compinit; compinit
 _comp_options+=(globdots)
 
-# PROMPT 
-PS1='%F{blue}%T %b%f ' 
+# PROMPT
+PS1='%F{blue}%T %b%f '
 
 # ALIASES
 vim() {
-    if [[ -z "$1" ]] 
-    then 
-        mvim 
-    else 
+    if [[ -z "$1" ]]
+    then
+        mvim
+    else
         mvim --remote-silent "$1"
     fi
 }
 
 emacs() {
-    emacsclient --quiet --suppress-output --reuse-frame --alternate-editor="" "$1" &
+    emacsclient --quiet --suppress-output --reuse-frame --alternate-editor="" $1 &
 }
 
 tex-project() {
-    curl -L -O https://github.com/thecatbus/tex-template/archive/main.zip 
+    curl -L -O https://github.com/thecatbus/tex-template/archive/main.zip
     unzip main.zip && rm main.zip
 
-    if [[ ! -z "$1" ]] 
-    then 
+    if [[ ! -z "$1" ]]
+    then
         mv tex-template-main "$1" && cd "$1"
-    else 
+    else
         cd tex-template-main
     fi
 
@@ -51,19 +51,21 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 #export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 #export FZF_CTRL_T_COMMAND='ag --hidden -g ""'
 #export FZF_DEFAULT_OPTS='--info=hidden
-#                         --height 30% 
-#                         --layout=reverse 
-#                         --multi               
+#                         --height 30%
+#                         --layout=reverse
+#                         --multi
 #                         --cycle
 #                         --color=gutter:-1,bg+:-1,fg:-1:dim,fg+:-1:bold'
 
 # DDGR
 # export DDGR_COLORS='eMecxy'
-# export DISABLE_PROMPT_COLOR=1 
+# export DISABLE_PROMPT_COLOR=1
 # alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
 
 # PATH
 export PATH="$PATH:/usr/local/etc/rubber/bin:/usr/local/anaconda3/bin:/Users/parth/Notebook/.scripts"
+
+export INFOPATH="/Library/TeX/Documentation/texmf-dist-doc/info:$INFOPATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

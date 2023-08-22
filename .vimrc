@@ -9,6 +9,9 @@ if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('parth@vim')
 endif
 
+" Set texbook folder
+let g:texbook_root = $HOME.'/Notebook'
+
 " ----------------------------------------------------------------------------
 " APPEARANCE SETTINGS
 " ----------------------------------------------------------------------------
@@ -20,24 +23,24 @@ set signcolumn=yes
 
 " GUI APPEARANCE -------------------------------------------------------------
 
-set guifont=APL386\ Nerd\ Font:h18
+set guifont=APL386\ Nerd\ Font:h16
 set guioptions=
 set transparency=15
 set blur=40
 
 function! Winpreset_large()
     winpos 20 20
-    set lines=50 columns=148
+    set lines=53 columns=164
 endfunction
 
 function! Winpreset_medium()
     winpos 350 250
-    set lines=28 columns=87
+    set lines=30 columns=90
 endfunction
 
 function! Winpreset_preview()
     winpos 20 20
-    set lines=50 columns=87
+    set lines=53 columns=87
 endfunction
 
 nnoremap <leader>wl :call Winpreset_large()<CR>
@@ -172,6 +175,14 @@ set scrolloff=10
 
 set noswapfile
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * call TrimWhitespace()
+
 " SEARCH----------------------------------------------------------------------
 set ignorecase
 set smartcase
@@ -240,6 +251,7 @@ let g:vimtex_quickfix_ignore_filters = [
           \ 'starttoc',
           \ 'counter',
           \ 'Marginpar',
+          \ 'PDF string',
           \]
 
 " Don't conceal in tex
@@ -317,7 +329,7 @@ nmap <leader>e :CocCommand explorer<CR>
 
 " imap <C-l> <Plug>(coc-snippets-expand)
 " vmap <C-j> <Plug>(coc-snippets-select)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+imap <S-Space> <Plug>(coc-snippets-expand-jump)
 " xmap <leader>x  <Plug>(coc-convert-snippet) " Create new snippet with current selected text, visual mode only.
 
 " GIT ------------------------------------------------------------------------
@@ -333,6 +345,7 @@ nmap gsu :CocCommand git.chunkUnstage<CR>
 " CTRL P ---------------------------------------------------------------------
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_extensions = ['line', 'quickfix', 'texbook']
 let g:ctrlp_show_hidden = 1
 
 " AIRLINE --------------------------------------------------------------------
