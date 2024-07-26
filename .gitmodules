@@ -40,3 +40,6 @@
 [submodule ".vim/pack/packages/start/ctrlp.vim"]
 	path = .vim/pack/packages/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule ".vim/pack/packages/start/reply.vim"]
+	path = .vim/pack/packages/start/reply.vim
+	url = https://github.com/rhysd/reply.vim

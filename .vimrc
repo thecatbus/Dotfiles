@@ -18,7 +18,7 @@ let g:texbook_root = $HOME.'/Notebook'
 
 set fillchars=eob:\ ,vert:\│
 set noshowmode 		" Disable mode display at bottom
-set conceallevel=2
+set conceallevel=0
 set signcolumn=yes
 
 " GUI APPEARANCE -------------------------------------------------------------
@@ -28,23 +28,15 @@ set guioptions=
 set transparency=15
 set blur=40
 
-function! Winpreset_large()
-    winpos 20 20
-    set lines=53 columns=164
-endfunction
-
-function! Winpreset_medium()
-    winpos 350 250
-    set lines=30 columns=90
-endfunction
+" Default window size
+winpos 84 53
+set lines=49 columns=150
 
 function! Winpreset_preview()
     winpos 20 20
     set lines=53 columns=87
 endfunction
 
-nnoremap <leader>wl :call Winpreset_large()<CR>
-nnoremap <leader>wm :call Winpreset_medium()<CR>
 nnoremap <leader>wp :call Winpreset_preview()<CR>
 
 " CURSORLINE------------------------------------------------------------------
@@ -127,8 +119,10 @@ autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathHighlights()
 function! Startupbackground()
     call system("defaults read -g AppleInterfaceStyle")
     if v:shell_error == 1
+        set background=light
         colorscheme catppuccin_latte
     else
+        set background=dark
         colorscheme catppuccin_mocha
     endif
 endfunction
@@ -137,9 +131,12 @@ call Startupbackground()
 
 " Manual change
 function! Setbackground()
-    if &background == 'dark'
+    call system("defaults read -g AppleInterfaceStyle")
+    if v:shell_error == 1
+        set background=light
         colorscheme catppuccin_latte
     else
+        set background=dark
         colorscheme catppuccin_mocha
     endif
 endfunction
@@ -237,10 +234,15 @@ let g:haskell_indent_disable = 1
 
 " LaTeX ----------------------------------------------------------------------
 let g:tex_flavor = "latex"
+
 let g:vimtex_view_method = 'general'
 let g:vimtex_view_general_viewer = 'sioyek'
 let g:vimtex_view_automatic = 1
 let g:vimtex_fold_enabled = 0
+let g:vimtex_view_reverse_search_edit_cmd = 'split'
+let g:vimtex_view_general_options = '@pdf --qwindowgeometry 745x1002+915+20 --execute-command toggle_titlebar'
+
+let g:vimtex_toc_todo_labels = {'TODO': 'TODO: ', 'ADDREFERENCE': 'CITE: ', 'CHECKTHIS': 'CHECK: ', 'FIXTHIS': 'FIX: ', 'EXPAND': 'EXPAND: ', 'REMOVETHIS': 'REMOVE: ', 'UNKNOWN': 'UNKNOWN: '}
 
 let g:vimtex_quickfix_ignore_filters = [
           \ 'has changed',
@@ -254,16 +256,19 @@ let g:vimtex_quickfix_ignore_filters = [
           \ 'PDF string',
           \]
 
-" Don't conceal in tex
-function! SetConceal()
-    if &filetype == 'tex'
-        set conceallevel=0
-    else
-        set conceallevel=2
-    endif
-endfunction
+" Quickly open base directory
+nnoremap <leader>od :execute "!open " . expand("%:h")<CR>
 
-autocmd VimEnter,WinEnter,BufWinEnter 	* call SetConceal()
+" Don't conceal in tex
+" function! SetConceal()
+"     if &filetype == 'tex'
+"         set conceallevel=0
+"     else
+"         set conceallevel=2
+"     endif
+" endfunction
+
+" autocmd VimEnter,WinEnter,BufWinEnter 	* call SetConceal()
 
 " Automatically cut lines
 function! SetWidth()
@@ -275,6 +280,14 @@ function! SetWidth()
 endfunction
 
 autocmd VimEnter,WinEnter,BufWinEnter 	* call SetWidth()
+
+" GAP ------------------------------------------------------------------------
+
+augroup gap
+  " Remove all gap autocommands
+  au!
+autocmd BufRead,BufNewFile *.g,*.gi,*.gd set filetype=gap comments=s:##\ \ ,m:##\ \ ,e:##\ \ b:#
+augroup END
 
 " ----------------------------------------------------------------------------
 " PLUGIN SETTINGS
@@ -347,6 +360,9 @@ nmap gsu :CocCommand git.chunkUnstage<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_extensions = ['line', 'quickfix', 'texbook']
 let g:ctrlp_show_hidden = 1
+
+
+nnoremap <silent> <leader>tb :CtrlPTeXbook<CR>
 
 " AIRLINE --------------------------------------------------------------------
 
@@ -544,3 +560,13 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " let g:UltiSnipsSnippetDirectories = ["ultisnips"]
 
+" REPLY.VIM ------------------------------------------------------------------
+
+function! s:define_gap_repl() abort
+    return reply#repl#base('gap.sh', { 'prompt_start' : '^gap> ', 'prompt_continue' : '^> '})
+endfunction
+
+let g:reply_repls = {'gap' : [function('s:define_gap_repl')]}
+
+
+nnoremap <silent> <S-CR> :ReplSend<CR>

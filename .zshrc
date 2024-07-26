@@ -63,9 +63,12 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 # alias duck="ddgr --num=5 --reg='uk-en' --unsafe"
 
 # PATH
-export PATH="$PATH:/usr/local/etc/rubber/bin:/usr/local/anaconda3/bin:/Users/parth/Notebook/.scripts"
+export PATH="$PATH:/usr/local/etc/rubber/bin:/usr/local/anaconda3/bin:/Users/parth/Notebook/.scripts:/Users/parth/Library/gap-4.12.2/bin"
 
 export INFOPATH="/Library/TeX/Documentation/texmf-dist-doc/info:$INFOPATH"
+
+# HEBIKANI
+export WANIKANI_API_KEY="83e787c3-fc54-46c2-b004-86c60a41edca"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
