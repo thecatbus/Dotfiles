@@ -43,3 +43,6 @@
 [submodule ".vim/pack/packages/start/reply.vim"]
 	path = .vim/pack/packages/start/reply.vim
 	url = https://github.com/rhysd/reply.vim
+[submodule ".vim/pack/packages/start/vim-smoothie"]
+	path = .vim/pack/packages/start/vim-smoothie
+	url = https://github.com/psliwka/vim-smoothie
