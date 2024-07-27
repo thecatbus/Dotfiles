@@ -24,20 +24,21 @@ set signcolumn=yes
 " GUI APPEARANCE -------------------------------------------------------------
 
 set guifont=APL386\ Nerd\ Font:h16
-set guioptions=
-set transparency=15
-set blur=40
+set guioptions=a
+set titlestring=‎
+"set transparency=15
+"set blur=40
 
 " Default window size
-winpos 84 53
-set lines=49 columns=150
+" winpos 84 53
+" set lines=49 columns=150
 
-function! Winpreset_preview()
-    winpos 20 20
-    set lines=53 columns=87
-endfunction
-
-nnoremap <leader>wp :call Winpreset_preview()<CR>
+" function! Winpreset_preview()
+"     winpos 20 20
+"     set lines=53 columns=87
+" endfunction
+"
+" nnoremap <leader>wp :call Winpreset_preview()<CR>
 
 " CURSORLINE------------------------------------------------------------------
 "autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
@@ -115,21 +116,6 @@ endfunction
 autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathHighlights()
 
 " BACKGROUND TRANSITION-------------------------------------------------------
-" At startup
-function! Startupbackground()
-    call system("defaults read -g AppleInterfaceStyle")
-    if v:shell_error == 1
-        set background=light
-        colorscheme catppuccin_latte
-    else
-        set background=dark
-        colorscheme catppuccin_mocha
-    endif
-endfunction
-
-call Startupbackground()
-
-" Manual change
 function! Setbackground()
     call system("defaults read -g AppleInterfaceStyle")
     if v:shell_error == 1
@@ -140,6 +126,8 @@ function! Setbackground()
         colorscheme catppuccin_mocha
     endif
 endfunction
+
+call Setbackground()
 
 " Convenient Keybind
 nnoremap <leader>tt :call Setbackground()<CR>
@@ -236,11 +224,11 @@ let g:haskell_indent_disable = 1
 let g:tex_flavor = "latex"
 
 let g:vimtex_view_method = 'general'
-let g:vimtex_view_general_viewer = 'sioyek'
+let g:vimtex_view_general_viewer = 'skim'
 let g:vimtex_view_automatic = 1
-let g:vimtex_fold_enabled = 0
+let g:vimtex_fold_enabled = 1
 let g:vimtex_view_reverse_search_edit_cmd = 'split'
-let g:vimtex_view_general_options = '@pdf --qwindowgeometry 745x1002+915+20 --execute-command toggle_titlebar'
+" let g:vimtex_view_general_options = '@pdf --qwindowgeometry 745x1002+915+20 --execute-command toggle_titlebar'
 
 let g:vimtex_toc_todo_labels = {'TODO': 'TODO: ', 'ADDREFERENCE': 'CITE: ', 'CHECKTHIS': 'CHECK: ', 'FIXTHIS': 'FIX: ', 'EXPAND': 'EXPAND: ', 'REMOVETHIS': 'REMOVE: ', 'UNKNOWN': 'UNKNOWN: '}
 
