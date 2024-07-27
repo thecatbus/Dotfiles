@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/parth/.Dotfiles/.emacs.d'
+let g:netrw_dirhist_5='/Users/parth/.emacs.d'
 let g:netrw_dirhist_4='/Users/parth/Notebook/notes/2023_11_10_more_semibricks'
 let g:netrw_dirhist_3='/Users/parth/Notebook/notes/2023_12_13_ubiquitous_techniques_in_hodge_theory'
 let g:netrw_dirhist_2='/Users/parth/Notebook/notes/2023_12_14_enumerative_geometry_of_k3_surfaces'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/Users/parth/Notebook/notes/2023_12_14_enumerative_geomet
 let g:netrw_dirhist_9='/Users/parth/Notebook/notes/2023_12_13_ubiquitous_techniques_in_hodge_theory'
 let g:netrw_dirhist_8='/Users/parth/Notebook/notes/2023_10_10_riemann_surfaces'
 let g:netrw_dirhist_7='/Users/parth/Projects/bridgeland-stability-2023/sections'
-let g:netrw_dirhist_6='/Users/parth/Projects/bridgeland-stability-2023'
-let g:netrw_dirhist_5='/Users/parth/Projects/divisors-2023'
