@@ -1,0 +1,33 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/parth/Projects/" . "torsionpairs-3foldflops-2024/")
+ ("/Users/parth/" . "Projects/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/parth/Projects/torsionpairs-3foldflops-2024/"
+ "/Users/parth/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "main.tex"
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/parth/Projects/torsionpairs-3foldflops-2024/" (26279 39762 848749 584000) "main.blg" "main.run.xml" "main.fls" "main.log" "main.aux" ".git/" "main.fdb_latexmk" ".gitignore" "zotero-library.bib" "main.out" "main.bcf" "template/" "main.tex" "main.xdv" "main.pdf" ".DS_Store" "main.bbl" "main.synctex.gz" "../" "./")
+
+ ("/Users/parth/Projects/" (26274 14241 239343 797000) "torsionpairs-3foldflops-2024/" "annual-review-2023/" "annual-review-2024/" "oberwolfach-2405a/" "tex-template/" "divisors-2023/" "advent-of-code-2022/" "gerby-trial/" ".DS_Store" "bridgeland-stability-2023/" "mma-heartfan-2024/" "research/" "../" "./")
+
+ ("/Users/parth/.emacs.d/" (26277 26111 684110 137000) "themes/" "elpa/" ".emacs" "init.el" "auto-save-list/" "transient/" "emacs-Macaulay2" "../" "./")
+
+ ("/Users/parth/" (26279 30980 778516 702000) ".skim/" ".kotlinc_history" ".conda/" ".zsh_sessions/" ".viminfo" ".bash_history" ".haskeline" ".gitconfig" ".cache/" ".continuum/" ".python_history" "Downloads/" ".Xauthority" ".bash_profile" "Genki/" ".m2/" ".vscode/" ".mono/" ".hushlogin" "Notebook/" ".pyenv/" ".zcompcache/" "Documents/" ".npm/" ".zcompdump" ".jupyter/" ".HaskellLanguageServer/" ".ipynb_checkpoints/" ".gitflow_export" ".yabairc" ".Trash/" ".ghci" ".gradle/" ".ghc/" "Applications/" ".vimrc" "Movies/" ".ssh/" ".latexmkrc" ".anaconda/" "Song Tabs/" ".idlerc/" ".gitignore" ".fzf.bash" "Public/" ".elan/" ".iterm2/" ".fzf.zsh" ".lein/" "Google Drive/" ".cups/" ".gitignore_global" ".emacs.d/" ".Dotfiles/" "Zotero/" ".skhdrc" "Hartshorne Solutions/" ".lesshst" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" ".cpan/" "YACReader Library/" "Minna No Nihongo/" "Website/" ".zprofile" ".pylint.d/" "Pictures/" "Projects/" ".local/" ".elm/" ".gap_hist" ".zshrc" ".bashrc" ".wget-hsts" ".hgignore_global" ".stCommitMsg" "Archive/" ".CFUserTextEncoding" ".yarnrc" ".DS_Store" ".terminfo/" ".vim/" ".condarc" ".julia/" ".mupdf.history" "Music/" ".config/" ".stack/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

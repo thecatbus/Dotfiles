@@ -16,7 +16,7 @@ let g:texbook_root = $HOME.'/Notebook'
 " APPEARANCE SETTINGS
 " ----------------------------------------------------------------------------
 
-set fillchars=eob:\ ,vert:\│
+set fillchars=fold:\ ,eob:\ ,vert:\│
 set noshowmode 		" Disable mode display at bottom
 set conceallevel=0
 set signcolumn=yes
@@ -40,13 +40,16 @@ set titlestring=‎
 "
 " nnoremap <leader>wp :call Winpreset_preview()<CR>
 
-" CURSORLINE------------------------------------------------------------------
-"autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
-"autocmd WinLeave 			* setlocal nocursorline
+" LINE NUMBER-----------------------------------------------------------------
+autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal cursorline
+autocmd VimEnter,WinEnter,BufWinEnter 	* setlocal relativenumber
+autocmd WinLeave 			* setlocal nocursorline
+autocmd WinLeave 			* setlocal norelativenumber
 
 " COLOR AND HIGHLIGHT ADJUSTMENTS---------------------------------------------
 
 function! Adjustcolors()
+    hi cursorline guibg=NONE
     " Diff colours in signcolumn
     if &background == 'light'
         hi DiffAdd guibg=bg guifg=#a6d189
@@ -223,14 +226,19 @@ let g:haskell_indent_disable = 1
 " LaTeX ----------------------------------------------------------------------
 let g:tex_flavor = "latex"
 
-let g:vimtex_view_method = 'general'
-let g:vimtex_view_general_viewer = 'skim'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_view_skim_sync = 1
 let g:vimtex_view_automatic = 1
-let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_enabled = 0
 let g:vimtex_view_reverse_search_edit_cmd = 'split'
 " let g:vimtex_view_general_options = '@pdf --qwindowgeometry 745x1002+915+20 --execute-command toggle_titlebar'
 
 let g:vimtex_toc_todo_labels = {'TODO': 'TODO: ', 'ADDREFERENCE': 'CITE: ', 'CHECKTHIS': 'CHECK: ', 'FIXTHIS': 'FIX: ', 'EXPAND': 'EXPAND: ', 'REMOVETHIS': 'REMOVE: ', 'UNKNOWN': 'UNKNOWN: '}
+
+let  g:vimtex_fold_types = {
+           \ 'envs' : {'enabled' : 0 }
+           \}
+
 
 let g:vimtex_quickfix_ignore_filters = [
           \ 'has changed',

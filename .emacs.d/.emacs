@@ -18,7 +18,7 @@
 
 ;; UI ELEMENTS
 (setq inhibit-startup-message t)
-(setq default-frame-alist '((font . "APL386 Nerd Font-18")
+(setq default-frame-alist '((font . "APL386 Nerd Font-15")
 			    (undecorated-round . 1)
                             (drag-internal-border . 1)
             			    (internal-border-width . 5)))
@@ -55,7 +55,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(spaceline catppuccin-theme leaf nord-theme smex magit)))
+ '(package-selected-packages
+   '(auctex catppuccin-theme leaf magit nord-theme smex spaceline)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
