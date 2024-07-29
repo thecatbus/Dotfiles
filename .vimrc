@@ -23,7 +23,7 @@ set signcolumn=yes
 
 " GUI APPEARANCE -------------------------------------------------------------
 
-set guifont=APL386\ Nerd\ Font:h16
+set guifont=APL386\ Nerd\ Font:h15
 set guioptions=a
 set titlestring=‎
 "set transparency=15
