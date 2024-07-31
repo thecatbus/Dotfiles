@@ -437,7 +437,7 @@ let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
 let g:airline_skip_empty_sections = 1
 function! AirlineInit()
     let g:airline_section_b = airline#section#create_left(['(%2v,%l)'])
-    let g:airlin_section_c = airline#section#create_left(['%{Shortpath()}','readonly','coc_status','lsp_progress'])
+    let g:airline_section_c = airline#section#create_left(['%{Shortpath()}','readonly','coc_status','lsp_progress'])
     let g:airline_section_x = airline#section#create_right(['branch'])
     let g:airline_section_y = airline#section#create_right(['hunks'])
 
