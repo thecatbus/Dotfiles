@@ -441,9 +441,9 @@ function! AirlineInit()
     let g:airline_section_x = airline#section#create_right(['branch'])
     let g:airline_section_y = airline#section#create_right(['hunks'])
 
-    let filetypes = get(g:, 'airline#extensions#wordcount#filetypes',
-        \ ['asciidoc', 'help', 'mail', 'markdown', 'rmd', 'nroff', 'org', 'rst', 'text', 'plaintex', 'tex'])
-    if index(filetypes, &filetype) <= -1
+    let wordcount#filetypes = ['asciidoc', 'help', 'mail', 'markdown', 'rmd', 'nroff', 'org', 'rst', 'text']
+    let g:airline#extensions#wordcount#filetypes = wordcount#filetypes
+    if index(wordcount#filetypes, &filetype) <= -1
         let g:airline_section_z = airline#section#create_right([' %L'])
     else
         let g:airline_section_z = airline#section#create_right([])
